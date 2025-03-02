@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merix Industries - About</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styl pro konzoli */
+        #console-output {
+            background-color: black;
+            color: green;
+            font-family: monospace;
+            padding: 10px;
+            width: 100%;
+            height: 300px;
+            overflow-y: scroll;
+            white-space: pre-wrap;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Funkce pro simulaci konzolového výstupu
+        function consoleLog(message) {
+            var consoleDiv = document.getElementById('console-output');
+            consoleDiv.innerHTML += message + '\n';
+            consoleDiv.scrollTop = consoleDiv.scrollHeight; // Posune obsah na konec
+        }
+
+        // Příklad logování do konzole
+        function simulateConsoleOutput() {
+            consoleLog("Starting the program...");
+            setTimeout(() => consoleLog("Initializing components..."), 1000);
+            setTimeout(() => consoleLog("Running task 1..."), 2000);
+            setTimeout(() => consoleLog("Task 1 completed."), 3000);
+            setTimeout(() => consoleLog("Running task 2..."), 4000);
+            setTimeout(() => consoleLog("Task 2 completed."), 5000);
+            setTimeout(() => consoleLog("Program finished."), 6000);
+        }
+
+        // Zavoláme simulaci konzoly při načtení stránky
+        window.onload = simulateConsoleOutput;
+    </script>
 </head>
 <body>
     <h1>Hey, I'm Merix</h1>
@@ -39,5 +76,7 @@
         </video>
     </div>
 
+    <!-- Kontejner pro zobrazení konzolového výstupu -->
+    <div id="console-output"></div>
 </body>
 </html>
