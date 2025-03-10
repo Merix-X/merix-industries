@@ -29,29 +29,36 @@
 
     <!-- Obsah stránky -->
     <h1>Hey, I'm Merix</h1>
-    <div class="container">
-        <h2>About me</h2>
-        <p>
-            I am Merix, a primary school student and this is my company - Merix Industries. In my free time I do programming in Python and Java and implement some of my ideas.
-        </p>
-    </div>
 
-    <div class="container">
-        <h2>What I'm working on</h2>
-        <p>
-            Lately, I've been working mostly on a real-life Iron Man suit or simple expense logging software in Python.
-        </p>
-    </div>
+    <div class="main-content"> <!-- Opravený obalovací div -->
+        <div class="container">
+            <h2>About me</h2>
+            <p>
+                I am Merix, a primary school student and this is my company - Merix Industries. In my free time I do programming in Python and Java and implement some of my ideas.
+            </p>
+        </div>
 
-    <div class="container dino-game">
-        <h2>Play Chrome Dino!</h2>
-        <iframe src="https://chromedino.com/black/" width="600" height="300"></iframe>
+        <div class="container">
+            <h2>What I'm working on</h2>
+            <p>
+                Lately, I've been working mostly on a real-life Iron Man suit or simple expense logging software in Python.
+            </p>
+        </div>
+
+        <div class="container dino-game">
+            <h2>Play Chrome Dino!</h2>
+            <iframe src="https://chromedino.com/black/" width="600" height="300"></iframe>
+        </div>
     </div>
 
     <script>
-        // Přepínání menu na mobilech
-        document.querySelector(".menu-toggle").addEventListener("click", function() {
-            document.querySelector(".menu").classList.toggle("active");
+        // Přepínání menu na mobilech (debug verze)
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("JavaScript Loaded!"); // Debug: ověření načtení skriptu
+            document.querySelector(".menu-toggle").addEventListener("click", function() {
+                console.log("Menu toggle clicked!"); // Debug: ověření kliknutí
+                document.querySelector(".menu").classList.toggle("active");
+            });
         });
     </script>
 </body>
