@@ -1,18 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 /* Navigační lišta */
 nav {
-    background-color: #1e1e1e; /* Tmavě šedá */
+    background-color: #1e1e1e;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,129 +10,67 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 2px solid #FFD700; /* Zlatá linka pod lištou */
+    border-bottom: 2px solid #FFD700;
 }
 
-/* Navigační položky */
-nav ul {
+/* Logo */
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+/* Menu položky vedle sebe */
+.menu {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
-    margin-right: 20px;
+.menu li {
+    margin: 0 15px; /* Odstup mezi položkami */
 }
 
-/* Barva textu navigačních položek */
-nav ul li a {
+/* Odkazy v menu */
+.menu li a {
     text-decoration: none;
-    color: #ffcc00; /* Barva podle největšího nadpisu (h1) */
+    color: #ffcc00; /* Barva jako h1 */
     font-size: 18px;
 }
 
-nav ul li a:hover {
-    color: #FFD700; /* Barva při najetí myši */
+/* Odkazy po najetí myši */
+.menu li a:hover {
+    color: #FFD700;
 }
 
-/* Logo s kulatým tvarem */
-.logo img {
-    height: 50px; /* Výška loga */
-    width: 50px;  /* Šířka loga pro udržení kruhu */
-    border-radius: 50%; /* Kulatý tvar */
-}
-
-h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #ffcc00;
-}
-
-h2 {
-    font-size: 28px;
-    color: #ff9900;
-    margin-top: 30px;
-}
-
-p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.container {
-    background-color: #292929;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;  /* Zajišťuje automatickou šířku */
-    max-width: 1200px; /* Maximální šířka kontejneru */
-    margin-top: 20px;
-    box-sizing: border-box;
-}
-
-.dino-game {
-    margin-top: 40px;
-    padding: 30px;
-}
-
-iframe {
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    height: 400px;
-}
-
-@media (max-width: 768px) {
-    p {
-        font-size: 16px;
-        max-width: 90%;
-    }
-
-    iframe {
-        height: 300px;
-    }
-
-    .container {
-        max-width: 100%;  /* Umožní containeru vyplnit celou šířku na menších obrazovkách */
-    }
-}
-/* Skrytí menu na mobilních zařízeních */
-.menu {
-    display: flex;
-}
-
+/* Skrytí hamburger menu na desktopu */
 .menu-toggle {
-    display: none; /* Skryté na větších obrazovkách */
+    display: none;
+    font-size: 30px;
+    color: #fff;
     cursor: pointer;
 }
 
-/* Zobrazení menu na mobilních zařízeních */
+/* Mobilní verze */
 @media (max-width: 768px) {
     .menu {
         display: none;
         flex-direction: column;
-        align-items: center;
         width: 100%;
+        text-align: center;
     }
 
     .menu.active {
-        display: flex; /* Menu se zobrazí, když je aktivní */
+        display: flex;
     }
 
     .menu-toggle {
-        display: block; /* Zobrazí hamburger ikonu na mobilu */
-        font-size: 30px;
-        color: #fff;
+        display: block;
     }
 
     nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 }
