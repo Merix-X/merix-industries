@@ -114,3 +114,37 @@ iframe {
         max-width: 100%;  /* Umožní containeru vyplnit celou šířku na menších obrazovkách */
     }
 }
+/* Skrytí menu na mobilních zařízeních */
+.menu {
+    display: flex;
+}
+
+.menu-toggle {
+    display: none; /* Skryté na větších obrazovkách */
+    cursor: pointer;
+}
+
+/* Zobrazení menu na mobilních zařízeních */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex; /* Menu se zobrazí, když je aktivní */
+    }
+
+    .menu-toggle {
+        display: block; /* Zobrazí hamburger ikonu na mobilu */
+        font-size: 30px;
+        color: #fff;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
