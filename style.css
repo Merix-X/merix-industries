@@ -25,6 +25,29 @@ nav {
     border-bottom: 2px solid #FFD700; /* Zlatá linka pod lištou */
 }
 
+/* Navigační položky */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+/* Barva textu navigačních položek */
+nav ul li a {
+    text-decoration: none;
+    color: #ffcc00; /* Barva podle největšího nadpisu (h1) */
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Barva při najetí myši */
+}
+
 /* Logo s kulatým tvarem */
 .logo img {
     height: 50px; /* Výška loga */
