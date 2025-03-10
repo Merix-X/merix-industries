@@ -6,44 +6,88 @@
     <title>Merix Industries - About</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Styl pro konzoli */
-        #console-output {
-            background-color: black;
-            color: green;
-            font-family: monospace;
-            padding: 10px;
-            width: 100%;
-            height: 300px;
-            overflow-y: scroll;
-            white-space: pre-wrap;
-            border-radius: 5px;
-            margin-top: 20px;
+        /* Styl pro menu */
+        header {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu li {
+            display: inline;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            color: #ff9900;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                color: white;
+            }
         }
     </style>
-    <script>
-        // Funkce pro simulaci konzolového výstupu
-        function consoleLog(message) {
-            var consoleDiv = document.getElementById('console-output');
-            consoleDiv.innerHTML += message + '\n';
-            consoleDiv.scrollTop = consoleDiv.scrollHeight; // Posune obsah na konec
-        }
-
-        // Příklad logování do konzole
-        function simulateConsoleOutput() {
-            consoleLog("Starting the program...");
-            setTimeout(() => consoleLog("Initializing components..."), 1000);
-            setTimeout(() => consoleLog("Running task 1..."), 2000);
-            setTimeout(() => consoleLog("Task 1 completed."), 3000);
-            setTimeout(() => consoleLog("Running task 2..."), 4000);
-            setTimeout(() => consoleLog("Task 2 completed."), 5000);
-            setTimeout(() => consoleLog("Program finished."), 6000);
-        }
-
-        // Zavoláme simulaci konzoly při načtení stránky
-        window.onload = simulateConsoleOutput;
-    </script>
 </head>
 <body>
+    <!-- Menu -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="https://merix-industries.com/">
+                    <img src="logo.jpg" alt="Merix Industries">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="https://merix-industries.com/">Home</a></li>
+                <li><a href="https://merix-industries.com/products">Products</a></li>
+                <li><a href="https://merix-industries.com/about">About</a></li>
+                <li><a href="https://merix-industries.com/projects">Projects</a></li>
+                <li><a href="https://merix-industries.com/contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- Obsah stránky -->
     <h1>Hey, I'm Merix</h1>
     <div class="container">
         <h2>About me</h2>
@@ -76,7 +120,11 @@
         </video>
     </div>
 
-    <!-- Kontejner pro zobrazení konzolového výstupu -->
-    <div id="console-output"></div>
+    <script>
+        // Přepínání menu na mobilech
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".menu").classList.toggle("active");
+        });
+    </script>
 </body>
 </html>
