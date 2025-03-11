@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merix Industries - Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigační menu -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="https://merix-industries.com/">
+                    <img src="logo.jpg" alt="Merix Industries, s.r.o">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="https://merix-industries.com/">Home</a></li>
+                <li><a href="https://merix-industries.com/products">Products</a></li>
+                <li><a href="https://merix-industries.com/about">About</a></li>  <!-- Opravený odkaz -->
+                <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
+                <li><a href="https://merix-industries.com/projects">Projects</a></li>
+                <li><a href="https://merix-industries.com/contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- Sekce produktů -->
+    <main>
+        <h1>Our Products</h1>
+        <div class="products-container">
+            <!-- Produkt 1 -->
+            <div class="product-card">
+                <img src="product1.jpg" alt="Product 1">
+                <h2>Product 1</h2>
+                <p>Short description of product 1.</p>
+                <a href="#" class="btn">More Info</a>
+            </div>
+
+            <!-- Produkt 2 -->
+            <div class="product-card">
+                <img src="product2.jpg" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>Short description of product 2.</p>
+                <a href="#" class="btn">More Info</a>
+            </div>
+
+            <!-- Produkt 3 -->
+            <div class="product-card">
+                <img src="product3.jpg" alt="Product 3">
+                <h2>Product 3</h2>
+                <p>Short description of product 3.</p>
+                <a href="#" class="btn">More Info</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Přepínání menu na mobilech
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".menu").classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
