@@ -31,10 +31,15 @@ nav {
 }
 
 /* Logo */
-.logo img {
+.logo {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+
+.product-card img {
+    width: 80%; /* Obrázek bude 80 % šířky karty */
+    height: auto;
 }
 
 /* Menu */
