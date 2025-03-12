@@ -32,13 +32,13 @@ nav {
 
 /* Logo */
 .logo {
-    height: 40px; /* Zmenšení výšky loga */
-    width: 40px; /* Zmenšení šířky loga */
+    height: 12px; /* Zmenšení výšky loga */
+    width: 12px; /* Zmenšení šířky loga */
     border-radius: 50%; /* Zachování kulatého tvaru */
 }
 
 .product-card img {
-    width: 80%; /* Obrázek bude 80 % šířky karty */
+    width: 25%; /* Obrázek bude 80 % šířky karty */
     height: auto;
 }
 
