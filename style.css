@@ -32,9 +32,9 @@ nav {
 
 /* Logo */
 .logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    height: 40px; /* Zmenšení výšky loga */
+    width: 40px; /* Zmenšení šířky loga */
+    border-radius: 50%; /* Zachování kulatého tvaru */
 }
 
 .product-card img {
