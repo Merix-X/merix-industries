@@ -32,8 +32,9 @@ nav {
 
 /* Logo */
 .logo img {
-    max-width: 30px;
+    max-width: 40px;
     height: auto;
+    border-radius: 50%;
 }
 
 .product-card img {
