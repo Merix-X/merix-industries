@@ -16,21 +16,44 @@ body {
 }
 
 /* Kontejner */
-container {
-    font-family: Arial, sans-serif;
-    background-color: #2a2a2a; /* Světlejší než tělo stránky */
+.container {
+    background-color: #2f2f2f; /* O něco světlejší než pozadí stránky */
     text-align: center;
-    margin: 20px auto; /* Odsazení pro lepší vizuální efekt */
-    padding: 20px;
-    border-radius: 15px; /* Zaoblené rohy */
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 20px;
     color: #ffffff;
-    width: 80%; /* Přizpůsobitelné dle potřeby */
-    max-width: 800px; /* Omezí šířku kontejneru */
+    width: 80%;
+    max-width: 800px;
 
-    /* Světlejší "stín" pro vystouplý efekt */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    /* Efekt "mlhy" kolem – jemný rozmazaný rámeček */
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.08);
+    
+    backdrop-filter: blur(4px); /* rozmazání pozadí – volitelné */
+    -webkit-backdrop-filter: blur(4px); /* pro Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* jemný ohraničující pás */
 }
 
+.container-dino-game {
+    background-color: #2f2f2f;
+    text-align: center;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 20px;
+    color: #ffffff;
+    width: 80%;
+    max-width: 800px;
+
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.08);
+    
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 
 /* Navigační lišta */
