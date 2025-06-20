@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST["message"]);
 
     // Nastavení příjemce a předmětu
-    $to = "tvuj@email.cz"; // <- nahraď svou adresou
-    $subject = "Nová zpráva z formuláře";
+    $to = "matyas.kounovsky@merix-industries.com";
+    $subject = "Someone has signed up to subscribe to Merix Industries";
     $headers = "From: $email";
 
     // Sestavení zprávy
