@@ -18,6 +18,8 @@
       padding: 10px;
       box-sizing: border-box;
       background-color: #ffcc00;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     
     input::placeholder, textarea::placeholder {
@@ -32,6 +34,7 @@
       color: white;
       border: none;
       cursor: pointer;
+      border-radius: 4px;
     }
 
     /* Styl pro h1 a tooltip tlačítko */
@@ -40,6 +43,7 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 20px;
+      position: relative;
     }
 
     .tooltip-btn {
@@ -56,6 +60,9 @@
       position: relative;
       padding: 0;
       user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .tooltip-text {
@@ -76,6 +83,7 @@
       pointer-events: none;
       font-size: 13px;
       line-height: 1.3;
+      user-select: none;
     }
 
     .tooltip-text::after {
@@ -89,7 +97,8 @@
       border-color: #333 transparent transparent transparent;
     }
 
-    .tooltip-btn:hover + .tooltip-text {
+    .tooltip-btn:hover .tooltip-text,
+    .tooltip-btn:focus .tooltip-text {
       visibility: visible;
       opacity: 1;
       pointer-events: auto;
@@ -121,8 +130,12 @@
   <div class="container">
     <div class="title-wrapper">
       <h1>In exchange for your email, I’ll give you the best I have :)</h1>
-      <button type="button" class="tooltip-btn" aria-label="Informace o aplikaci">?</button>
-      <span class="tooltip-text">This application is only in Czech language, but will be multilingual in later versions.</span>
+      <button type="button" class="tooltip-btn" aria-label="Informace o aplikaci" tabindex="0">
+        ?
+        <span class="tooltip-text">
+          This application is only in Czech language, but will be multilingual in later versions.
+        </span>
+      </button>
     </div>
 
     <form action="https://formspree.io/f/xjkrepdv" method="POST">
