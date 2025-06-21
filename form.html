@@ -3,35 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=1.0">
     <title>Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-        input, textarea, button {
-            width: 100%;
-            margin-top: 10px;
-            padding: 10px;
-        }
-        button {
-            background: #4285F4;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -47,39 +20,39 @@
         </form>
     </div>
     <script>
-      const form = document.querySelector("form");
-      form.addEventListener("submit", async function(e) {
-        e.preventDefault();
-    
-        const name = form.name.value;
-        const email = form.email.value;
-        const message = form.message ? form.message.value : "";
-    
-        document.getElementById("formattedMessage").value =
-          `Full name: ${name}, E-mail: ${email}, Message: ${message}`;
-    
-        const data = new FormData(form);
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-    
-        if (response.ok) {
-          alert("Thank you! The app is now downloading...");
-          form.reset();
-    
-          // Přesměrování po 2 sekundách
-          setTimeout(() => {
-            window.location.href = "index.html"; // nebo "/" podle potřeby
-          }, 2000);
-    
-        } else {
-          alert("There's been a mistake. Please try again.");
-        }
-      });
+          function downloadFile(url, filename) {
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = filename;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+            }
+
+          const form = document.querySelector("form");
+          form.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const response = await fetch(form.action, {
+                      method: form.method,
+                      body: data,
+                      headers: {
+                            'Accept': 'application/json'
+                      }
+            });
+            if (response.ok) {
+                  alert("Thank you! The app is now downloading...");
+                  form.reset();
+                  setTimeout(() => {
+                    downloadFile("soubor.zip", "aplikace.zip");
+                    // přesměrování (volitelné)
+                    window.location.href = "/";
+                  }, 1000);
+                  window.location.href = "/index.html";
+            } else {
+                  alert("There's been a mistake. Please try again.");
+            }
+          });
     </script>
 </body>
 </html>
