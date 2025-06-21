@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formular</title>
+    <title>Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,7 +35,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Vyplňte formulář</h2>
+        <h2>Fill in the form</h2>
         <form action="https://formspree.io/f/xjkrepdv" method="POST">
             <label for="name">Full name:</label>
             <input type="text" name="name" id="name" required>
@@ -50,6 +50,14 @@
       const form = document.querySelector("form");
       form.addEventListener("submit", async function(e) {
         e.preventDefault();
+    
+        const name = form.name.value;
+        const email = form.email.value;
+        const message = form.message ? form.message.value : "";
+    
+        document.getElementById("formattedMessage").value =
+          `Full name: ${name}, E-mail: ${email}, Message: ${message}`;
+    
         const data = new FormData(form);
         const response = await fetch(form.action, {
           method: form.method,
@@ -58,9 +66,16 @@
             'Accept': 'application/json'
           }
         });
+    
         if (response.ok) {
           alert("Thank you! The app is now downloading...");
           form.reset();
+    
+          // Přesměrování po 2 sekundách
+          setTimeout(() => {
+            window.location.href = "index.html"; // nebo "/" podle potřeby
+          }, 2000);
+    
         } else {
           alert("There's been a mistake. Please try again.");
         }
