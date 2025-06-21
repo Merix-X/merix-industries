@@ -7,16 +7,31 @@
   <link rel="stylesheet" href="style.css?v=1.0" />
   <style>
     label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
     }
     
-    input, textarea, button {
+    input, textarea {
         width: 100%;
         margin-top: 10px;
         padding: 10px;
-        box-sizing: border-box; /* aby padding nezvětšoval šířku */
+        box-sizing: border-box;
+        background-color: #ffcc00;
+    }
+    
+    input::placeholder, textarea::placeholder {
+        color: #333;
+    }
+    
+    button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        background: #4285F4;
+        color: white;
+        border: none;
+        cursor: pointer;
     }
   </style>
 </head>
@@ -43,7 +58,7 @@
 
   <!-- Obsah formuláře -->
   <div class="container">
-    <h2>In exchange for your email, I’ll give you the best I have. :)</h2>
+    <h1>In exchange for your email, I’ll give you the best I have :)</h1>
     <form action="https://formspree.io/f/xjkrepdv" method="POST">
       <label for="name">Full name:</label>
       <input type="text" name="name" id="name" required />
