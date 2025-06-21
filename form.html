@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Merix Industries - Subscription</title>
   <link rel="stylesheet" href="style.css?v=1.0" />
+  <style>
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    
+    input, textarea, button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        box-sizing: border-box; /* aby padding nezvětšoval šířku */
+    }
+  </style>
 </head>
 <body>
   <!-- Menu -->
@@ -29,7 +43,7 @@
 
   <!-- Obsah formuláře -->
   <div class="container">
-    <h2>In exchange for your email, I’ll give you the best I have — the Password Manager.</h2>
+    <h2>In exchange for your email, I’ll give you the best I have. :)</h2>
     <form action="https://formspree.io/f/xjkrepdv" method="POST">
       <label for="name">Full name:</label>
       <input type="text" name="name" id="name" required />
