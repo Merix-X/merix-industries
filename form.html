@@ -7,31 +7,92 @@
   <link rel="stylesheet" href="style.css?v=1.0" />
   <style>
     label {
-        display: block;
-        margin-top: 15px;
-        font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
     }
     
     input, textarea {
-        width: 100%;
-        margin-top: 10px;
-        padding: 10px;
-        box-sizing: border-box;
-        background-color: #ffcc00;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #ffcc00;
     }
     
     input::placeholder, textarea::placeholder {
-        color: #333;
+      color: #333;
     }
     
     button {
-        width: 100%;
-        margin-top: 10px;
-        padding: 10px;
-        background: #4285F4;
-        color: white;
-        border: none;
-        cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background: #4285F4;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Styl pro h1 a tooltip tlačítko */
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tooltip-btn {
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      cursor: help;
+      position: relative;
+      padding: 0;
+      user-select: none;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 0.3s;
+      pointer-events: none;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+
+    .tooltip-btn:hover + .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -58,7 +119,12 @@
 
   <!-- Obsah formuláře -->
   <div class="container">
-    <h1>In exchange for your email, I’ll give you the best I have :)</h1>
+    <div class="title-wrapper">
+      <h1>In exchange for your email, I’ll give you the best I have :)</h1>
+      <button type="button" class="tooltip-btn" aria-label="Informace o aplikaci">?</button>
+      <span class="tooltip-text">This application is only in Czech language, but will be multilingual in later versions.</span>
+    </div>
+
     <form action="https://formspree.io/f/xjkrepdv" method="POST">
       <label for="name">Full name:</label>
       <input type="text" name="name" id="name" required />
