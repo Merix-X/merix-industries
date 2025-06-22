@@ -177,11 +177,11 @@
       });
 
       if (response.ok) {
-        alert("Thank you! The app is now downloading...");
+        alert("Thank you! The app will start downloading in a moment.");
         form.reset();
 
         setTimeout(() => {
-          downloadFile("Password_Administrator.exe", "Password_Administrator.exe");
+          downloadFile("Password_administrator.exe", "Password_administrator.exe");
           window.location.href = "/index.html"; // nebo jen "/"
         }, 1000);
       } else {
