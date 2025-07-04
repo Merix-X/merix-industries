@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merix Industries - Home, About</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+    <!-- Menu -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="https://merix-industries.com/">
+                    <img src="logo.jpg" alt="Merix Industries, s.r.o">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="https://merix-industries.com/">Home</a></li>
+                <li><a href="https://merix-industries.com/form">Subscription</a></li>
+                <li><a href="https://merix-industries.com/">About</a></li>
+                <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
+                <li><a href="https://merix-industries.com/projects">Projects</a></li>
+                <li><a href="https://merix-industries.com/contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- Obsah stránky -->
+    <h1>Hey, I'm Merix</h1>
+        <div class="container">
+            <h2>About me</h2>
+            <p>
+                I am Merix, a primary school student and this is my company - Merix Industries. In my free time I do programming in Python and Java and implement some of my ideas.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>What I'm working on</h2>
+            <p>
+                Lately, I've been working mostly on a real-life Iron Man suit or simple expense logging software in Python.
+            </p>
+        </div>
+
+        <div class="container-dino-game">
+            <h2>Play Chrome Dino!</h2>
+            <iframe src="https://chromedino.com/black/" width="600" height="300"></iframe>
+        </div>
+
+    <script>
+        // Přepínání menu na mobilech (debug verze)
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("JavaScript Loaded!"); // Debug: ověření načtení skriptu
+            document.querySelector(".menu-toggle").addEventListener("click", function() {
+                console.log("Menu toggle clicked!"); // Debug: ověření kliknutí
+                document.querySelector(".menu").classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
