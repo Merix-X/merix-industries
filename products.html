@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merix Industries - Products</title>
+  <link rel="stylesheet" href="style.css?v=1.0" />
+  <style>
+    /* Menu styl podobný indexu */
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header nav {
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between;
+    }
+    .logo img {
+      height: 50px;
+    }
+    ul.menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+    ul.menu li a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    ul.menu li a:hover {
+      color: #fff;
+    }
+    /* Produkty vedle sebe */
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ffcc00aa;
+      padding: 1.5rem;
+      width: 280px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+      transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #ffcc00;
+    }
+    .product-card h3 {
+      margin-top: 0;
+      color: #ffcc00;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    .product-card p {
+      flex-grow: 1;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      color: #ddd;
+    }
+    .product-card a.buy-btn {
+      background-color: #ffcc00;
+      color: #1e1e1e;
+      font-weight: 700;
+      padding: 0.75rem;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      display: block;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .product-card a.buy-btn:hover {
+      background-color: #e6b800;
+    }
+    /* Footer nebo něco pod produkty - případně */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+      background-color: #111;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="https://merix-industries.com/">
+          <img src="logo.jpg" alt="Merix Industries, s.r.o" />
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="https://merix-industries.com/">Home</a></li>
+        <li><a href="/products.html">Products</a></li>
+        <li><a href="https://merix-industries.com/about">About</a></li>
+        <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
+        <li><a href="https://merix-industries.com/projects">Projects</a></li>
+        <li><a href="https://merix-industries.com/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Produkty -->
+  <main class="products-container">
+    <article class="product-card">
+      <h3>Onyx Basic</h3>
+      <p>A simple Onyx version that answers your queries. Available online at onyx.merix-industries.com.</p>
+      <a href="https://onyx.merix-industries.com/" class="buy-btn" target="_blank" rel="noopener">Try Online</a>
+    </article>
+
+    <article class="product-card">
+      <h3>Onyx Full Version</h3>
+      <p>The full-featured Onyx software, available soon. Stay tuned for its release in a few months.</p>
+      <a href="/onyx-coming-soon.html" class="buy-btn">Coming Soon</a>
+    </article>
+
+    <!-- Přidej další produkty tady -->
+    <article class="product-card">
+      <h3>Merix Automation Suite</h3>
+      <p>Advanced automation tools for Python testing and enterprise-level solutions.</p>
+      <a href="https://merix-industries.com/products/automation-suite" class="buy-btn" target="_blank" rel="noopener">Buy Now</a>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Merix Industries, s.r.o. All rights reserved.
+  </footer>
+</body>
+</html>
