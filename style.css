@@ -17,7 +17,7 @@ body {
 
 /* Kontejner */
 .container {
-    background-color: #2f2f2f; /* O něco světlejší než pozadí stránky */
+    background-color: #2f2f2f;
     text-align: center;
     margin: 20px auto;
     padding: 25px;
@@ -26,14 +26,13 @@ body {
     width: 80%;
     max-width: 800px;
 
-    /* Efekt "mlhy" kolem – jemný rozmazaný rámeček */
     box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.08);
-    
-    backdrop-filter: blur(4px); /* rozmazání pozadí – volitelné */
-    -webkit-backdrop-filter: blur(4px); /* pro Safari */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* jemný ohraničující pás */
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .container-dino-game {
@@ -49,12 +48,11 @@ body {
     box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.08);
-    
+
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 /* Navigační lišta */
 nav {
@@ -76,11 +74,6 @@ nav {
     max-width: 45px;
     height: auto;
     border-radius: 50%;
-}
-
-.product-card img {
-    width: 25%; /* Obrázek bude 80 % šířky karty */
-    height: auto;
 }
 
 /* Menu */
@@ -147,7 +140,7 @@ p {
 
 /* Obrázky produktů */
 .product-card img {
-    width: 80%; /* Nastaví obrázek na 80 % šířky karty */
+    width: 80%;
     height: auto;
     border-radius: 10px;
 }
@@ -183,16 +176,7 @@ p {
     background-color: #FFD700;
 }
 
-/* Mobilní verze */
-@media (max-width: 768px) {
-    .products-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-card {
-        width: 90%;
-    }
+/* Formulář */
 form {
     display: flex;
     flex-direction: column;
@@ -225,7 +209,6 @@ form input:focus {
     border: 1px solid #ffcc00;
 }
 
-/* Tlačítko stejné jako H1 */
 form .buy-btn {
     background-color: #ffcc00;
     color: #1e1e1e;
@@ -243,7 +226,6 @@ form .buy-btn {
 form .buy-btn:hover {
     background-color: #FFD700;
 }
-
 
 /* Tooltip zarovnání */
 .tooltip-btn {
@@ -271,4 +253,15 @@ form .buy-btn:hover {
     visibility: visible;
     opacity: 1;
 }
+
+/* Mobilní verze */
+@media (max-width: 768px) {
+    .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+    }
 }
