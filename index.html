@@ -7,48 +7,43 @@
     <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
-    <!-- Menu -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="https://merix-industries.com/">
-                    <img src="logo.jpg" alt="Merix Industries, s.r.o">
-                </a>
-            </div>
-            <ul class="menu">
-                <li><a href="https://merix-industries.com/">Home</a></li>
-                <li><a href="https://merix-industries.com/form">Subscription</a></li>
-                <li><a href="https://merix-industries.com/about">About</a></li>
-                <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
-                <li><a href="https://merix-industries.com/projects">Projects</a></li>
-                <li><a href="https://merix-industries.com/contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">&#9776;</div>
-        </nav>
-    </header>
+  <!-- Menu -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="https://merix-industries.com/">
+          <img src="logo.jpg" alt="Merix Industries, s.r.o">
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="https://merix-industries.com/">Home</a></li>
+        <li><a href="https://merix-industries.com/form">Subscription</a></li>
+        <li><a href="https://merix-industries.com/about">About</a></li>
+        <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
+        <li><a href="https://merix-industries.com/projects">Projects</a></li>
+        <li><a href="https://merix-industries.com/contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
 
-    <!-- Obsah stránky -->
-      <!-- Úvodní sekce -->
-  <section class="hero" style="padding: 60px 20px; background-color: #f4f7fb; text-align: center;">
-    <h1 style="font-size: 2.5rem; color: #333;">Welcome to Merix Industries</h1>
-    <p style="font-size: 1.2rem; color: #555; max-width: 700px; margin: 20px auto;">
+  <!-- Úvodní sekce -->
+  <section class="container">
+    <h1>Welcome to Merix Industries</h1>
+    <p>
       We specialize in crafting simple yet powerful testing software in Python. From lightweight automation tools to complex enterprise solutions in Java or C++, we deliver quality code tailored to your needs.
     </p>
-    <p style="font-size: 1.1rem; color: #222; margin-top: 30px;">
-      🚀 Ready to see what we’re capable of?
-    </p>
-    <a href="#magnet" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 6px;">
-      Get our best app for free
-    </a>
+    <p>🚀 Ready to see what we’re capable of?</p>
+    <a href="#magnet" class="buy-btn" style="text-decoration: none;">Get our best app for free</a>
   </section>
 
   <!-- Sekce o společnosti -->
-  <section style="padding: 50px 20px; background-color: #ffffff; text-align: center;">
-    <h2 style="font-size: 2rem; color: #333;">What We Do</h2>
-    <p style="max-width: 700px; margin: 20px auto; font-size: 1rem; color: #444;">
+  <section class="container">
+    <h2 style="color: #ffcc00;">What We Do</h2>
+    <p>
       At Merix Industries, we build custom software with a focus on simplicity, reliability, and purpose. Whether it’s internal test tooling in Python or larger contracted solutions in Java or C++, our mission is to help your systems work smarter — not harder.
     </p>
-    <ul style="list-style: none; padding: 0; margin-top: 30px;">
+    <ul style="list-style: none; padding: 0; margin-top: 20px;">
       <li>✅ Test Automation in Python</li>
       <li>✅ Custom Java & C++ Applications</li>
       <li>✅ Small tools. Big results.</li>
@@ -57,10 +52,11 @@
   </section>
 
   <!-- Emailový magnet -->
-  <section id="magnet" style="padding: 60px 20px; background-color: #f0f8ff; max-width: 600px; margin: auto;">
-    <div class="title-wrapper" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-      <h2 style="margin: 0; font-size: 1.5rem; color: #333;">In exchange for your email, I’ll give you the best I have :)</h2>
-      <button type="button" class="tooltip-btn" aria-label="Info about app" tabindex="0" style="background-color: #4285F4; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; font-weight: bold; font-size: 14px; cursor: help;">
+  <section class="container" id="magnet">
+    <div class="title-wrapper" style="display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 20px;">
+      <h2 style="margin: 0;">In exchange for your email, I’ll give you the best I have :)</h2>
+      <button type="button" class="tooltip-btn" aria-label="Info about app" tabindex="0"
+        style="background-color: #ffcc00; color: #1e1e1e; border: none; border-radius: 50%; width: 24px; height: 24px; font-weight: bold; font-size: 14px; cursor: help;">
         ?
         <span class="tooltip-text" style="visibility: hidden; opacity: 0; width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 8px; position: absolute; z-index: 10; bottom: 125%; left: 50%; transform: translateX(-50%); font-size: 13px; line-height: 1.3;">
           This application is only in Czech language, but will be multilingual in later versions.
@@ -68,20 +64,20 @@
       </button>
     </div>
 
-    <form action="https://formspree.io/f/xjkrepdv" method="POST">
-      <label for="fname">First name:</label>
-      <input type="text" id="fname" name="first_name" required />
+    <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="first_name" required /><br />
 
-      <label for="lname">Last name:</label>
-      <input type="text" id="lname" name="last_name" required />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="last_name" required /><br />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
 
-      <label for="phone">Phone (optional):</label>
-      <input type="tel" id="phone" name="phone" />
+      <label for="phone">Phone (optional):</label><br />
+      <input type="tel" id="phone" name="phone" pattern="[\d\s\+\-]{6,}" /><br />
 
-      <button type="submit">Send and get my best app</button>
+      <button type="submit" class="buy-btn">Send and get my best app</button>
     </form>
   </section>
 
@@ -97,7 +93,7 @@
     });
 
     // Odeslání formuláře
-    const form = document.querySelector("form");
+    const form = document.querySelector("#magnetForm");
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
