@@ -25,11 +25,9 @@ body {
     color: #ffffff;
     width: 80%;
     max-width: 800px;
-
     box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.08);
-
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -44,11 +42,9 @@ body {
     color: #ffffff;
     width: 80%;
     max-width: 800px;
-
     box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.08);
-
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -60,7 +56,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 25px 20px; /* tlustší horní lišta */
     position: fixed;
     width: 100%;
     top: 0;
@@ -70,14 +66,36 @@ nav {
 }
 
 /* Logo */
-.logo img {
+.logo img,
+.logo-link img {
     max-width: 45px;
     height: auto;
     border-radius: 50%;
 }
 
+/* Logo s textem */
+.logo-text-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /* Menu */
 .menu {
+    flex: 1;
+    justify-content: center;
     display: flex;
     list-style: none;
     padding: 0;
@@ -267,64 +285,19 @@ form .buy-btn:hover {
 }
 
 .centered-checklist li {
-    margin: 5px 0;
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.5em;
     font-size: 18px;
 }
 
-.centered-checklist {
-  list-style: none;
-  padding: 0;
-}
-
-.centered-checklist li {
-  position: relative;
-  padding-left: 2em;
-  margin-bottom: 0.5em;
-}
-
 .centered-checklist li::before {
-  content: "✅";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1em;
-  line-height: 1;
-}
-
-/* Hladký scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Logo s textem */
-.logo-text-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo-text {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Rozšíření navigační lišty */
-nav {
-    padding: 25px 20px; /* tlustší horní lišta */
-}
-
-/* Uprostřed menu */
-.menu {
-    flex: 1;
-    justify-content: center;
-    display: flex;
+    content: "✅";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1em;
+    line-height: 1;
 }
 
 /* Checklist zarovnání do leva */
@@ -335,6 +308,10 @@ nav {
     width: 100%;
 }
 
+/* Hladký scroll */
+html {
+    scroll-behavior: smooth;
+}
 
 /* Mobilní verze */
 @media (max-width: 768px) {
