@@ -4,31 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Merix Industries - Home</title>
-  <link rel="stylesheet" href="style.css?v=1.0" />
+  <link rel="stylesheet" href="style.css=v1.0" />
 </head>
 <body>
-
   <!-- Menu -->
   <header>
-    <nav>
-      <div class="logo-text-wrapper">
-        <a href="https://merix-industries.com/" class="logo-link">
-          <img src="logo.jpg" alt="Merix Industries, s.r.o." />
-          <span class="logo-text">Merix Industries, s.r.o.</span>
-        </a>
-      </div>
+    <div class="logo-text-wrapper">
+      <a href="https://merix-industries.com/">
+        <img src="logo.jpg" alt="Merix Industries, s.r.o" />
+      </a>
+      <span>Merix Industries, s.r.o.</span>
+    </div>
 
-      <ul class="menu">
-        <li><a href="https://merix-industries.com/">Home</a></li>
-        <li><a href="https://merix-industries.com/about">About</a></li>
-        <li><a href="https://merix-industries.com/products">Products</a></li>
-        <li><a href="https://merix-industries.com/projects">Our projects</a></li>
-        <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
-        <li><a href="https://merix-industries.com/contact">Contact</a></li>
-      </ul>
-
-      <div class="menu-toggle">&#9776;</div>
-    </nav>
+    <ul class="menu">
+      <li><a href="https://merix-industries.com/">Home</a></li>
+      <li><a href="https://merix-industries.com/about">About</a></li>
+      <li><a href="https://merix-industries.com/products">Products</a></li>
+      <li><a href="https://merix-industries.com/projects">Our projects</a></li>
+      <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
+      <li><a href="https://merix-industries.com/contact">Contact</a></li>
+    </ul>
   </header>
 
   <!-- Úvodní sekce -->
@@ -47,23 +42,22 @@
     <p>
       At Merix Industries, we build custom software with a focus on simplicity, reliability, and purpose. Whether it’s internal test tooling in Python or larger contracted solutions in Java or C++, our mission is to help your systems work smarter — not harder.
     </p>
-    <div class="checklist-wrapper">
-      <ul class="centered-checklist">
-        <li>Test Automation in Python</li>
-        <li>Custom Java & C++ Applications</li>
-        <li>Small tools. Big results.</li>
-        <li>Personalized software development on demand</li>
-      </ul>
-    </div>
+    <ul class="centered-checklist">
+      <li>Test Automation in Python</li>
+      <li>Custom Java & C++ Applications</li>
+      <li>Small tools. Big results.</li>
+      <li>Personalized software development on demand</li>
+    </ul>
   </section>
 
   <!-- Emailový magnet -->
   <section class="container" id="form">
     <div class="title-wrapper" style="display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 20px;">
       <h2 style="margin: 0;">In exchange for your contact information, I'll give you my best app for free</h2>
-      <button type="button" class="tooltip-btn" aria-label="Info about app" tabindex="0">
+      <button type="button" class="tooltip-btn" aria-label="Info about app" tabindex="0"
+        style="background-color: #ffcc00; color: #1e1e1e; border: none; border-radius: 50%; width: 24px; height: 24px; font-weight: bold; font-size: 14px; cursor: help;">
         ?
-        <span class="tooltip-text">
+        <span class="tooltip-text" style="visibility: hidden; opacity: 0; width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 8px; position: absolute; z-index: 10; bottom: 125%; left: 50%; transform: translateX(-50%); font-size: 13px; line-height: 1.3;">
           The app is only in Czech language, but will be multilingual in later versions.
         </span>
       </button>
@@ -87,6 +81,7 @@
   </section>
 
   <script>
+    // Tooltip zobrazení
     document.querySelector('.tooltip-btn').addEventListener('mouseover', function () {
       this.querySelector('.tooltip-text').style.visibility = 'visible';
       this.querySelector('.tooltip-text').style.opacity = '1';
@@ -96,19 +91,24 @@
       this.querySelector('.tooltip-text').style.opacity = '0';
     });
 
+    // Odeslání formuláře
     const form = document.querySelector("#magnetForm");
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+
       const data = new FormData(form);
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
         alert("Thank you! The app will start downloading in a moment.");
         form.reset();
+
         setTimeout(() => {
           const a = document.createElement("a");
           a.href = "Password_administrator.exe";
