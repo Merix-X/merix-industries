@@ -271,6 +271,26 @@ form .buy-btn:hover {
     font-size: 18px;
 }
 
+.centered-checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.centered-checklist li {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.centered-checklist li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1em;
+  line-height: 1;
+}
+
 /* Hladký scroll */
 html {
     scroll-behavior: smooth;
