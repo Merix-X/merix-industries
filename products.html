@@ -5,67 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Merix Industries - Products</title>
   <link rel="stylesheet" href="style.css?v=1.0" />
-  <style>
-    /* Flexbox container pro produkty vedle sebe */
-    .products-container {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Jednotlivý produkt (container) */
-    .product-card {
-      background-color: #1e1e1e;
-      color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
-      padding: 1.5rem;
-      flex: 1 1 300px;
-      max-width: 320px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .product-card h3 {
-      color: #ffcc00;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .product-card p {
-      flex-grow: 1;
-      line-height: 1.4;
-      margin-bottom: 1.5rem;
-    }
-
-    .buy-btn {
-      background-color: #ffcc00;
-      color: #1e1e1e;
-      font-weight: 700;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .buy-btn:hover {
-      background-color: #e6b800;
-    }
-  </style>
 </head>
 <body>
   <!-- Menu -->
   <header>
     <nav>
-      <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 12px;">
+      <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 16px;">
           <a href="https://merix-industries.com/">
             <img src="logo.jpg" alt="Merix Industries, s.r.o" style="height: 48px;">
           </a>
@@ -84,35 +29,27 @@
     </nav>
   </header>
 
-  <!-- NOVÝ NADPIS -->
-  <section style="text-align: center; padding: 2rem 1rem;">
-    <h1 style="font-size: 3rem; color: #ffcc00; margin: 0;">Our Current Products</h1>
-  </section>
-
-  <!-- Hlavní obsah: produkty vedle sebe -->
+  <!-- Hlavní obsah -->
+  <h1>Our Current Products</h1>
   <main class="products-container">
-    <!-- Produkt 1 -->
+
     <div class="product-card">
       <h3>Onyx Full Version</h3>
       <p>The complete Onyx software for advanced automation and testing. Available soon!</p>
       <a href="#" class="buy-btn" aria-disabled="true" style="opacity: 0.6; cursor: not-allowed;">Coming Soon</a>
     </div>
 
-    <!-- Produkt 2 -->
     <div class="product-card">
       <h3>Onyx Lite</h3>
       <p>Lightweight version of Onyx that answers your queries instantly. Available now at <a href="https://onyx.merix-industries.com/" target="_blank" style="color: #ffcc00; font-weight: bold;">onyx.merix-industries.com</a>.</p>
       <a href="https://onyx.merix-industries.com/" class="buy-btn" target="_blank" rel="noopener">Try it Now</a>
     </div>
-
-    <!-- Produkt 3 -->
+    
     <div class="product-card">
       <h3>Merix Automation Suite</h3>
       <p>Comprehensive automation tools for Python and Java, customized for your business needs.</p>
       <a href="https://merix-industries.com/products/automation-suite" class="buy-btn" target="_blank" rel="noopener">Buy Now</a>
     </div>
-
-    <!-- Přidej další produkty dle potřeby -->
   </main>
 </body>
 </html>
