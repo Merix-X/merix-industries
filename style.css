@@ -127,17 +127,28 @@ p {
     line-height: 1.6;
 }
 
-/* Zarovnaný seznam v sekci o společnosti */
 .centered-checklist {
-    list-style: disc;
+    list-style: none; /* vypneme výchozí odrážky */
     text-align: left;
     margin: 20px auto 0;
-    padding-left: 40px;
+    padding-left: 0;
     max-width: 600px;
 }
 
 .centered-checklist li {
+    position: relative;
+    padding-left: 28px; /* prostor pro ✅ */
     margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.centered-checklist li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1em;
+    line-height: 1;
 }
 
 /* Kontejner pro produkty */
