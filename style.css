@@ -272,42 +272,6 @@ form .buy-btn:hover {
     opacity: 1;
 }
 
-/* Zarovnání checklistu doprostřed */
-.centered-checklist {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    width: fit-content;
-}
-
-.centered-checklist li {
-    position: relative;
-    padding-left: 2em;
-    margin-bottom: 0.5em;
-    font-size: 18px;
-}
-
-.centered-checklist li::before {
-    content: "✅";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1em;
-    line-height: 1;
-}
-
-/* Checklist zarovnání do leva */
-.checklist-wrapper {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    width: 100%;
-}
-
 /* Hladký scroll */
 html {
     scroll-behavior: smooth;
