@@ -51,20 +51,20 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Navigační lišta */
+/* Navigační lišta */s
 nav {
-    background-color: #1e1e1e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 40px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 2px solid #FFD700;
-    flex-wrap: wrap;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px; /* menší výška */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ffcc00;
+  height: 56px; /* výška menu – pomůže při výpočtu padding-top pro body */
 }
 
 /* Logo */
