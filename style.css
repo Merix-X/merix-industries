@@ -12,7 +12,7 @@ body {
     color: #ffffff;
     text-align: center;
     margin: 0;
-    padding-top: 80px; /* Rezerva pro fixní menu */
+    padding-top: 80px;
 }
 
 /* Kontejner */
@@ -34,6 +34,7 @@ body {
 }
 
 .container-dino-game {
+    /* beze změny */
     background-color: #2f2f2f;
     text-align: center;
     margin: 20px auto;
@@ -56,37 +57,30 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 20px; /* tlustší horní lišta */
+    padding: 25px 40px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
     border-bottom: 2px solid #FFD700;
+    flex-wrap: wrap;
 }
 
 /* Logo */
-.logo img,
-.logo-link img {
-    max-width: 45px;
-    height: auto;
-    border-radius: 50%;
-}
-
-/* Logo s textem */
 .logo-text-wrapper {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.logo-text-wrapper img {
+    max-width: 48px;
+    height: 48px;
+    border-radius: 50%;
 }
 
-.logo-text {
+.logo-text-wrapper span {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
@@ -94,22 +88,25 @@ nav {
 
 /* Menu */
 .menu {
-    flex: 1;
-    justify-content: center;
-    display: flex;
     list-style: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
     margin: 0;
+    padding: 0;
+    gap: 30px;
 }
 
 .menu li {
-    margin: 0 15px;
+    display: inline-block;
 }
 
 .menu li a {
     text-decoration: none;
     color: #ffcc00;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .menu li a:hover {
@@ -126,8 +123,21 @@ h1 {
 p {
     font-size: 18px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     line-height: 1.6;
+}
+
+/* Zarovnaný seznam v sekci o společnosti */
+.centered-checklist {
+    list-style: disc;
+    text-align: left;
+    margin: 20px auto 0;
+    padding-left: 40px;
+    max-width: 600px;
+}
+
+.centered-checklist li {
+    margin-bottom: 12px;
 }
 
 /* Kontejner pro produkty */
@@ -156,28 +166,24 @@ p {
     transform: scale(1.05);
 }
 
-/* Obrázky produktů */
 .product-card img {
     width: 80%;
     height: auto;
     border-radius: 10px;
 }
 
-/* Název produktu */
 .product-card h2 {
     font-size: 24px;
     color: #ff9900;
     margin-top: 10px;
 }
 
-/* Cena */
 .product-card p {
     font-size: 18px;
     color: #ffffff;
     margin-top: 10px;
 }
 
-/* Tlačítko */
 .product-card .buy-btn {
     background-color: #ffcc00;
     color: #1e1e1e;
@@ -245,7 +251,7 @@ form .buy-btn:hover {
     background-color: #FFD700;
 }
 
-/* Tooltip zarovnání */
+/* Tooltip */
 .tooltip-btn {
     position: relative;
 }
@@ -279,6 +285,23 @@ html {
 
 /* Mobilní verze */
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .logo-text-wrapper {
+        margin-bottom: 10px;
+    }
+
     .products-container {
         flex-direction: column;
         align-items: center;
@@ -286,5 +309,9 @@ html {
 
     .product-card {
         width: 90%;
+    }
+
+    .centered-checklist {
+        padding-left: 20px;
     }
 }
