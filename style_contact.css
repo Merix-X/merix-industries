@@ -1,0 +1,153 @@
+/* Reset a základ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #ddd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header a navigace */
+header {
+  background-color: #121212;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text-wrapper a img {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+  display: block;
+}
+
+.logo-text-wrapper span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.menu li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+  background-color: #ffcc00;
+  color: #1e1e1e;
+  outline: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+/* Kontaktní kontejner */
+.contact-container {
+  max-width: 480px;
+  margin: 4rem auto;
+  background-color: #1e1e1e;
+  color: #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+  padding: 2rem 2.5rem;
+  text-align: center;
+}
+
+.contact-container h1 {
+  color: #ffcc00;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.contact-info {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+  font-size: 1.1rem;
+}
+
+.contact-container p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+a.contact-link {
+  color: #ffcc00;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a.contact-link:hover,
+a.contact-link:focus {
+  color: #e6b800;
+  outline: none;
+}
+
+/* Responsivita */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background-color: #121212;
+    padding: 0.5rem 0;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 10px 1.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
