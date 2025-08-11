@@ -51,5 +51,14 @@
       <a href="https://merix-industries.com/products/automation-suite" class="buy-btn" target="_blank" rel="noopener">Buy Now</a>
     </div>
   </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
