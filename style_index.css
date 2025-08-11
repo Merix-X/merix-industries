@@ -35,6 +35,10 @@ nav {
 
 .logo-text-wrapper a img {
   height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
   display: block;
 }
 
