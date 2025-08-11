@@ -35,5 +35,15 @@
       <p>Our biggest project right now is the Onyx AI desktop assistant, inspired by J.A.R.V.I.S from Iron Man. It can tell you the weather, time, country news, and answer questions in a friendly and concise way in a flash. It can read and write documents, play music, program, set reminders and much more - all completely offline with a pleasant voice. Onyx will soon be available right here on the Merix Industries website!</p>
      <a href="/products.html" style="color: #ffcc00; font-weight: bold; text-decoration: underline;">Buy Onyx AI right now!</a>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+        menuToggle.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
+      });
+    </script>
 </body>
 </html>
