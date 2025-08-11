@@ -44,16 +44,14 @@
                 Lately, I've been working mostly on a real-life Iron Man suit or simple AI desktop assistant in Python (Onyx - available here to buy). If you have any questions about me and my projects, feel free to contact me via the contact in the top menu :D
             </p>
         </div>
-
-    <script>
-        // Přepínání menu na mobilech (debug verze)
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("JavaScript Loaded!"); // Debug: ověření načtení skriptu
-            document.querySelector(".menu-toggle").addEventListener("click", function() {
-                console.log("Menu toggle clicked!"); // Debug: ověření kliknutí
-                document.querySelector(".menu").classList.toggle("active");
-            });
-        });
-    </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
