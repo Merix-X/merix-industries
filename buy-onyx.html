@@ -43,5 +43,14 @@
     </p>
     <a href="/products.html" style="color: #ffcc00; font-weight: bold; text-decoration: underline;">Back to Products</a>
   </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
