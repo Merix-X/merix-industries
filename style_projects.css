@@ -127,6 +127,28 @@ a:focus {
   outline: none;
 }
 
+/* Seznam s ikonami (checklist) */
+.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+}
+
+.checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
 /* Responsivita */
 @media (max-width: 768px) {
   nav {
