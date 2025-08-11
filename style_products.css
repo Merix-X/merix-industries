@@ -1,0 +1,199 @@
+/* Reset a základ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #ddd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header a navigace */
+header {
+  background-color: #121212;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-text-wrapper a img {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+  display: block;
+}
+
+.logo-text-wrapper span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.menu li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+  background-color: #ffcc00;
+  color: #1e1e1e;
+  outline: none;
+}
+
+/* Hamburger menu pro mobil */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+/* Nadpis */
+h1 {
+  color: #ffcc00;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 1rem 1.5rem;
+}
+
+/* Produkty - layout */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+/* Produktová karta */
+.product-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ddd;
+}
+
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(255, 204, 0, 0.7);
+}
+
+.product-card h3 {
+  margin-bottom: 0.8rem;
+  color: #ffcc00;
+  font-weight: 700;
+}
+
+.product-card p {
+  flex-grow: 1;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+}
+
+.product-card a.buy-btn {
+  background-color: #ffcc00;
+  color: #1e1e1e;
+  font-weight: 700;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: inline-block;
+}
+
+.product-card a.buy-btn:hover,
+.product-card a.buy-btn:focus {
+  background-color: #e6b800;
+  outline: none;
+}
+
+.product-card a.buy-btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsivita */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background-color: #121212;
+    padding: 0.5rem 0;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 10px 1.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
