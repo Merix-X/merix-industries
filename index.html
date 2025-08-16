@@ -36,7 +36,9 @@
       We specialize in crafting simple yet powerful testing software in Python. From lightweight automation tools to complex enterprise solutions in Java or C++, we deliver quality code tailored to your needs.
     </p>
     <p>🚀 Ready to see what we’re capable of?</p>
-    <a href="/products.html" style="color: #ffcc00; font-weight: bold; text-decoration: underline;">Get our best app for free!</a>
+    <a href="#form" style="color: #ffcc00; font-weight: bold; text-decoration: underline;">
+      Get our best app for free!
+    </a>
   </section>
 
   <!-- Sekce o společnosti -->
@@ -57,7 +59,7 @@
   <section class="crypto-cta">
     <div class="crypto-box">
       <!-- Logo tokenu -->
-      <img src="logo.jpg" alt="Merix Coin" style="width:20px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
+      <img src="logo.jpg" alt="Merix Coin" style="width:50px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
   
       <h2>💰 Support us with Crypto!</h2>
       <p>You can now support Merix Industries by buying our SOL token.</p>
@@ -71,15 +73,6 @@
         <code id="tokenAddress" class="copyable">mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6</code>
       </p>
     </div>
-  
-    <script>
-      const tokenCode = document.getElementById("tokenAddress");
-      tokenCode.addEventListener("click", () => {
-        navigator.clipboard.writeText(tokenCode.innerText).then(() => {
-          alert("Token address copied to clipboard!");
-        });
-      });
-    </script>
   </section>
 
   <!-- Emailový magnet -->
@@ -137,6 +130,14 @@
     document.querySelector('.tooltip-btn').addEventListener('mouseout', function () {
       this.querySelector('.tooltip-text').style.visibility = 'hidden';
       this.querySelector('.tooltip-text').style.opacity = '0';
+    });
+
+    // Kopírování adresy tokenu
+    const tokenCode = document.getElementById("tokenAddress");
+    tokenCode.addEventListener("click", () => {
+      navigator.clipboard.writeText(tokenCode.innerText).then(() => {
+        alert("Token address copied to clipboard!");
+      });
     });
 
     // Odeslání formuláře
