@@ -236,6 +236,52 @@ input[type="tel"]:focus {
   pointer-events: none;
 }
 
+.crypto-cta {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.crypto-box {
+  background: #1e1e1e;
+  border: 3px solid #ffcc00;
+  border-radius: 16px;
+  padding: 30px 40px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.crypto-box h2 {
+  color: #ffcc00;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.crypto-box p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.crypto-btn {
+  display: inline-block;
+  background: #ffcc00;
+  color: #1e1e1e;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.crypto-btn:hover {
+  background: #e6b800;
+  transform: scale(1.05);
+}
+
+
 /* YouTube subscribe box */
 .youtube-subscribe {
   margin: 2rem auto 4rem;
