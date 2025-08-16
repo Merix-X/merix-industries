@@ -57,7 +57,7 @@
   <section class="crypto-cta">
     <div class="crypto-box">
       <!-- Logo tokenu -->
-      <img src="logo.png" alt="Merix Coin" style="width:80px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
+      <img src="merix-coin.png" alt="Merix Coin" style="width:80px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
   
       <h2>💰 Support us with Crypto!</h2>
       <p>You can now support Merix Industries by buying our cryptocurrency token.</p>
@@ -68,23 +68,30 @@
   
       <p style="color:#bbb; font-size:0.9rem; margin-top:15px;">
         Token address: 
-        <code id="tokenAddress">mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6</code>
-        <button onclick="copyAddress()" style="margin-left:8px; padding:2px 6px; font-size:0.8rem; cursor:pointer; border-radius:6px;">
-          Copy
-        </button>
+        <code id="tokenAddress" class="copyable">mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6</code>
       </p>
     </div>
   
     <script>
-      function copyAddress() {
-        const address = document.getElementById("tokenAddress").innerText;
-        navigator.clipboard.writeText(address).then(() => {
+      const tokenCode = document.getElementById("tokenAddress");
+      tokenCode.addEventListener("click", () => {
+        navigator.clipboard.writeText(tokenCode.innerText).then(() => {
           alert("Token address copied to clipboard!");
         });
-      }
+      });
     </script>
+  
+    <style>
+      .copyable {
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .copyable:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 6px rgba(255, 204, 0, 0.5);
+      }
+    </style>
   </section>
-
 
   <!-- Emailový magnet -->
   <section class="container" id="form">
