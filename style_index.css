@@ -281,6 +281,14 @@ input[type="tel"]:focus {
   transform: scale(1.05);
 }
 
+.copyable {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.copyable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(255, 204, 0, 0.5);
+}
 
 /* YouTube subscribe box */
 .youtube-subscribe {
