@@ -297,52 +297,47 @@ input[type="tel"]:focus {
   text-align: center;
 }
 
-/* Email magnet */
-.email-magnet {
-  background: url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5") center/cover no-repeat;
-  position: relative;
-  color: #fff;
-}
-
-.magnet-overlay {
-  background: rgba(0,0,0,0.7);
+/* Lead Magnet */
+.lead-magnet {
+  background: linear-gradient(180deg, #1a1a1a, #111); /* decentní oddělení */
   padding: 80px 20px;
+  margin: 40px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.magnet-box {
-  background: rgba(30, 30, 30, 0.85);
+.lead-container {
+  background: rgba(34, 34, 34, 0.9);
+  border: 1px solid rgba(255, 204, 0, 0.3);
   border-radius: 16px;
-  padding: 40px;
+  padding: 40px 30px;
   max-width: 700px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
-.magnet-box h1 {
+.lead-container h2 {
   color: #ffcc00;
-  margin-bottom: 15px;
   font-size: 2rem;
-}
-
-.magnet-box p {
-  color: #ddd;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-.magnet-form {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
   margin-bottom: 15px;
-  flex-wrap: wrap;
 }
 
-.magnet-form input[type="email"] {
+.lead-container p {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.lead-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.lead-form input[type="email"] {
   flex: 1;
   min-width: 220px;
   padding: 12px 14px;
@@ -351,15 +346,15 @@ input[type="tel"]:focus {
   background: #2a2a2a;
   color: #eee;
   font-size: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
-.magnet-form input[type="email"]:focus {
+.lead-form input[type="email"]:focus {
   outline: none;
-  background: #3b3b3b;
-  box-shadow: 0 0 6px 2px #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
 }
 
-.magnet-form button {
+.lead-form button {
   background: #ffcc00;
   color: #1e1e1e;
   font-weight: bold;
@@ -368,16 +363,17 @@ input[type="tel"]:focus {
   padding: 12px 20px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.magnet-form button:hover {
+.lead-form button:hover {
   background: #e6b800;
+  transform: translateY(-2px);
 }
 
-.magnet-small {
-  font-size: 0.9rem;
-  opacity: 0.85;
+.small-note {
+  font-size: 0.85rem;
+  color: #aaa;
 }
 
 
