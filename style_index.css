@@ -350,6 +350,12 @@ input[type="tel"]:focus {
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
+.what-we-do ul li::before {
+  content: "⚡";
+  color: #ffcc00;
+  font-weight: bold;
+}
+
 /* Responsivita */
 @media (max-width: 768px) {
   nav {
