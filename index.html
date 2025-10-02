@@ -136,11 +136,10 @@
       });
     });
 
-    // Odeslání formuláře
     const form = document.querySelector("#magnetForm");
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
-
+  
       const data = new FormData(form);
       const response = await fetch(form.action, {
         method: form.method,
@@ -149,20 +148,26 @@
           Accept: "application/json",
         },
       });
-
+  
       if (response.ok) {
-        alert("Thank you! The app will start downloading in a moment.");
+        alert("Thank you! Your demo is downloading...");
+  
+        // vyprázdnění formuláře
         form.reset();
-
+  
+        // stáhne soubor (změň název souboru!)
         setTimeout(() => {
           const a = document.createElement("a");
-          a.href = "Password_administrator.exe";
-          a.download = "Password_administrator.exe";
+          a.href = "demo.exe";  // <- sem dej svůj soubor
+          a.download = "demo.exe";
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
+  
+          // přesměrování na home
           window.location.href = "/";
         }, 1000);
+  
       } else {
         alert("There's been a mistake. Please try again.");
       }
