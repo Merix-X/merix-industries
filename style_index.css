@@ -308,21 +308,15 @@ input[type="tel"]:focus {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: nowrap; /* zabrání samovolnému zalomení */
   gap: 40px;
-  flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
 }
 
-/* What We Do */
-.what-we-do {
-  flex: 1;
-  min-width: 300px;
-  background: rgba(34,34,34,0.9);
-  border-radius: 16px;
-  padding: 40px 30px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,204,0,0.3);
+.what-we-do, .lead-container {
+  flex: 1;                /* stejné rozdělení šířky */
+  min-width: 0;           /* fixne problém s flexbox overflow */
 }
 
 .what-we-do h2 {
@@ -358,6 +352,11 @@ input[type="tel"]:focus {
 
 /* Responsivita */
 @media (max-width: 768px) {
+  .hero-container {
+      flex-wrap: wrap;   /* na mobilech se vrátí pod sebe */
+    }
+  }
+
   nav {
     flex-wrap: wrap;
   }
