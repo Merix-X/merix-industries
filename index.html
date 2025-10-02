@@ -29,23 +29,19 @@
       </nav>
   </header>
 
-  <!-- Emailový magnet -->
-  <section class="container" id="form">
-    <div class="title-wrapper" style="display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 20px;">
-      <h2 style="margin: 0;">In exchange for your contact information, I'll give you my best app for free</h2>
-      <button type="button" class="tooltip-btn" aria-label="Info about app" tabindex="0"
-        style="background-color: #ffcc00; color: #1e1e1e; border: none; border-radius: 50%; width: 24px; height: 24px; font-weight: bold; font-size: 14px; cursor: help;">
-        ?
-        <span class="tooltip-text" style="visibility: hidden; opacity: 0; width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 8px; position: absolute; z-index: 10; bottom: 125%; left: 50%; transform: translateX(-50%); font-size: 13px; line-height: 1.3;">
-          The app is only in Czech language, but will be multilingual in later versions.
-        </span>
-      </button>
+  <!-- Email magnet sekce -->
+  <section class="email-magnet">
+    <div class="magnet-overlay">
+      <div class="magnet-box">
+        <h1>Get Our Free Software Sample 🚀</h1>
+        <p>Enter your email below and get instant access to a free demo.</p>
+        <form action="https://formspree.io/f/xjkrepdv" method="POST" class="magnet-form">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Get It Now</button>
+        </form>
+        <p class="magnet-small">No spam. Cancel anytime.</p>
+      </div>
     </div>
-
-    <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST">
-      <label for="email">Email:</label>
-      <button type="submit" class="buy-btn">Submit</button>
-    </form>
   </section>
 
   <!-- Sekce o společnosti -->
