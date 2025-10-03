@@ -49,7 +49,7 @@ nav {
   user-select: none;
 }
 
-/* Menu */
+/* Menu – vždy viditelné */
 .menu {
   list-style: none;
   display: flex;
@@ -342,34 +342,40 @@ input[type="tel"]:focus {
   font-weight: bold;
 }
 
-/* Responsivita */
-@media (max-width: 768px) {
-  .hero-container {
-      flex-wrap: wrap;   /* na mobilech se vrátí pod sebe */
-    }
-  }
+/* Submit tlačítko */
+.submit-btn {
+  background-color: #ffcc00;
+  color: #1e1e1e;
+  font-weight: 700;
+  padding: 14px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #e6b800;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Mobile fix – menu pořád na očích */
+@media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
   }
 
   .menu {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    display: none;
-    background-color: #121212;
-    padding: 0.5rem 0;
-  }
-
-  .menu.active {
-    display: flex;
+    margin-top: 10px;
   }
 
   .menu li {
-    padding: 10px 1.5rem;
-  }
-
-  .menu-toggle {
-    display: block;
+    padding: 6px 10px;
   }
 }
