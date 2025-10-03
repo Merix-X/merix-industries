@@ -28,40 +28,42 @@
           <div class="menu-toggle">&#9776;</div>
       </nav>
   </header>
-
-  <!-- Lead Magnet -->
-  <section class="container" id="form">
-    <h1 style="text-align:center;">🎁 Get a Free Demo App</h1>
-    <p style="text-align:center; margin-bottom:20px;">
-      Enter your email to instantly receive a free demo of our software.
-    </p>
-
-    <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST" style="max-width:400px; margin:0 auto; text-align:center;">
-      <input type="email" name="email" placeholder="Your email address" required 
-        style="width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc;">
-      <button type="submit" style="width:100%; padding:10px; border:none; border-radius:6px; background-color:#ffcc00; color:#1e1e1e; font-weight:bold;">Send me the demo</button>
-    </form>
-  </section>
-
-  <hr style="border: none; border-top: 2px solid #ffcc00; margin:40px auto; width:80%;">
-
-  <!-- Sekce o společnosti -->
-  <section class="container" id="about">
-    <h2 style="color: #ffcc00; text-align:center;">What We Do</h2>
-    <p style="text-align:center; max-width:600px; margin:0 auto 20px;">
-      At Merix Industries, we focus on creating practical AI solutions using convolutional neural networks (CNNs) and simple, functional software programs.
-    </p>
-    <ul class="centered-checklist" style="max-width:400px; margin:0 auto; padding-left:0; list-style:none; text-align:left;">
-      <li>Development of Convolutional Neural Networks (CNNs)</li>
-      <li>Integration of AI into lightweight applications</li>
-      <li>Custom small programs built on demand</li>
-    </ul>
-    <p style="text-align:center; margin-top:15px;">Smart code. Simple solutions. Real impact.</p>
+  
+  <section class="hero-section">
+    <div class="hero-container">
+  
+      <!-- What We Do -->
+      <div class="what-we-do">
+        <h2>✨ What We Do</h2>
+        <p>
+          At <strong>Merix Industries</strong>, we develop cutting-edge software powered by 
+          <span style="color:#ffcc00; font-weight:600;">neural networks</span> and smart automation.  
+        </p>
+        <ul class="centered-checklist">
+          <li>Development of Convolutional Neural Networks (CNNs)</li>
+          <li>Integration of AI into lightweight applications</li>
+          <li>Custom small programs built on demand</li>
+        </ul>
+      </div>
+  
+      <!-- Lead Magnet -->
+      <div class="lead-container">
+        <h2>🚀 Get Our Free Demo App</h2>
+        <p>Try a sample of our work – sign up and receive a free demo instantly.</p>
+        <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST" class="lead-form">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Submit</button>
+        </form>
+        <p class="small-note">No spam. Unsubscribe anytime.</p>
+      </div>
+  
+    </div>
   </section>
 
   <!-- Kryptoměnový CTA box -->
   <section class="crypto-cta">
-    <div class="crypto-box" style="text-align:center;">
+    <div class="crypto-box">
+      <!-- Logo tokenu -->
       <img src="logo.jpg" alt="Merix Coin" style="width:65px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
   
       <h2>💰 Support us with Crypto!</h2>
@@ -76,10 +78,29 @@
         <code id="tokenAddress" class="copyable">mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6</code>
       </p>
     </div>
+  
+    <script>
+      const tokenCode = document.getElementById("tokenAddress");
+      tokenCode.addEventListener("click", () => {
+        navigator.clipboard.writeText(tokenCode.innerText).then(() => {
+          alert("Token address copied to clipboard!");
+        });
+      });
+    </script>
+  
+    <style>
+      .copyable {
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .copyable:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 6px rgba(255, 204, 0, 0.5);
+      }
+    </style>
   </section>
 
-  <!-- YouTube Subscribe -->
-  <div class="youtube-subscribe" style="margin-top:30px; text-align:center;">
+  <div class="youtube-subscribe">
     <div class="g-ytsubscribe"
          data-channelid="UCeXNUW5L0r7H2jK94RxCdug"
          data-layout="full"
@@ -89,50 +110,54 @@
   </div>
   <script src="https://apis.google.com/js/platform.js"></script>
 
-  <!-- Skripty -->
   <script>
-    // Menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
-    menuToggle.addEventListener('click', () => { menu.classList.toggle('active'); });
+    
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
 
     // Kopírování adresy tokenu
     const tokenCode = document.getElementById("tokenAddress");
     tokenCode.addEventListener("click", () => {
-      navigator.clipboard.writeText(tokenCode.innerText).then(() => { alert("Token address copied to clipboard!"); });
+      navigator.clipboard.writeText(tokenCode.innerText).then(() => {
+        alert("Token address copied to clipboard!");
+      });
     });
 
-    // Lead magnet form submit
+    // Lead magnet - submit
     const form = document.querySelector("#magnetForm");
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
-
+  
       const data = new FormData(form);
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+        },
       });
-
+  
       if (response.ok) {
         alert("Thank you! Your demo is downloading...");
-
-        // reset form
+  
         form.reset();
-
-        // stáhne soubor
+  
+        // automatické stažení souboru (změň 'demo.exe' na svůj soubor)
         setTimeout(() => {
           const a = document.createElement("a");
-          a.href = "demo.exe";  // <- změň na svůj soubor
+          a.href = "demo.exe";   // <- sem si dej název svého souboru
           a.download = "demo.exe";
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
 
-          // přesměrování na homepage
+          // přesměrování zpět na homepage
           window.location.href = "/";
         }, 1000);
-
+  
       } else {
         alert("There's been a mistake. Please try again.");
       }
