@@ -72,14 +72,6 @@ nav {
   outline: none;
 }
 
-/* Hamburger menu pro mobil */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #ffcc00;
-  cursor: pointer;
-}
-
 /* Kontejner sekcí */
 .container {
   max-width: 900px;
