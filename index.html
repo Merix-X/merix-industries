@@ -1,116 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-     <header>
-          <nav>
-              <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 16px;">
-                  <a href="https://merix-industries.com/">
-                    <img src="logo.jpg" alt="Merix Industries, s.r.o" style="height: 48px;">
-                  </a>
-                  <span style="color: #fff; font-weight: bold; font-size: 1.2rem;">Merix Industries, s.r.o.</span>
-              </div>
-        
-              <ul class="menu">
-                  <li><a href="https://merix-industries.com/">Home</a></li>
-                  <li><a href="https://merix-industries.com/about">About</a></li>
-                  <li><a href="https://merix-industries.com/products">Products</a></li>
-                  <li><a href="https://merix-industries.com/projects">Our projects</a></li>
-                  <li><a href="https://onyx.merix-industries.com/">Onyx</a></li>
-                  <li><a href="https://merix-industries.com/contact">Contact</a></li>
-              </ul>
-              <div class="menu-toggle">&#9776;</div>
-          </nav>
-    </header>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style_onyx.css">
-    <title>Onyx AI Assistant</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merix Industries - Home</title>
+  <link rel="stylesheet" href="style_index.css?v=1.1" />
 </head>
 <body>
-    <h2>Ask Onyx:</h2>
-    <div class="input-container">
-        <input id="user-input" type="text" placeholder="Ask something...">
-        <button id="send-button">Send</button>
-        <button id="voice-button"></button>
+  <!-- Menu -->
+  <header>
+      <nav>
+          <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 16px;">
+              <a href="https://merix-industries.com/">
+                <img src="logo.jpg" alt="Merix Industries, s.r.o" style="height: 48px;">
+              </a>
+              <span style="color: #fff; font-weight: bold; font-size: 1.2rem;">Merix Industries</span>
+          </div>
+    
+          <ul class="menu">
+              <li><a href="https://merix-industries.com/">Home</a></li>
+              <li><a href="https://merix-industries.com/about">About</a></li>
+              <li><a href="https://merix-industries.com/products">Products</a></li>
+              <li><a href="https://merix-industries.com/projects">Our projects</a></li>
+              <li><a href="https://merix-industries.com/onyx">Onyx</a></li>
+              <li><a href="https://merix-industries.com/contact">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+  
+  <section class="hero-section">
+    <div class="hero-container">
+  
+      <!-- What We Do -->
+      <div class="what-we-do">
+        <h2>✨ What We Do</h2>
+        <p>
+          At <strong>Merix Industries</strong>, we develop cutting-edge software powered by 
+          <span style="color:#ffcc00; font-weight:600;">neural networks</span> and smart automation.  
+        </p>
+        <ul class="centered-checklist">
+          <li>Development of Convolutional Neural Networks (CNNs)</li>
+          <li>Integration of AI into lightweight applications</li>
+          <li>Custom small programs built on demand</li>
+        </ul>
+      </div>
+  
+      <!-- Lead Magnet -->
+      <div class="lead-container">
+        <h2>🚀 Get Our Free Demo App</h2>
+        <p>Try a sample of our work – sign up and receive a free demo instantly.</p>
+        <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST" class="lead-form">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <input type="hidden" name="_redirect" value="https://merix-industries.com/thank-you-page.html">
+          <button id="buy-btn" type="submit" class="submit-btn">Submit</button>
+        </form>
+        <p class="small-note">No spam. Unsubscribe anytime.</p>
+      </div>
+  
     </div>
-    <p id="recognized-text"></p>
+  </section>
 
-    <h2>Onyx's Response:</h2>
-    <div id="loading-spinner" class="loading-spinner"></div>
-    <textarea id="console-output" rows="10" cols="50" readonly></textarea>
-
+  <!-- Kryptoměnový CTA box -->
+  <section class="crypto-cta">
+    <div class="crypto-box">
+      <!-- Logo tokenu -->
+      <img src="logo.jpg" alt="Merix Coin" style="width:65px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
+  
+      <h2>💰 Support us with Crypto!</h2>
+      <p>You can now support Merix Industries by buying our SOL token.</p>
+  
+      <a href="https://raydium.io/swap/?inputMint=sol&outputMint=mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6" target="_blank" class="crypto-btn">
+        Buy Our Crypto Now
+      </a>
+  
+      <p style="color:#bbb; font-size:0.9rem; margin-top:15px;">
+        Token address: 
+        <code id="tokenAddress" class="copyable">mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6</code>
+      </p>
+    </div>
+  
     <script>
-         document.addEventListener("DOMContentLoaded", function() {
-           const menuToggle = document.querySelector(".menu-toggle");
-           const menu = document.querySelector(".menu");
-           menuToggle.addEventListener("click", () => {
-             menu.classList.toggle("active");
-           });
-         });
-         
-         async function sendQuery() {
-            const userInput = document.getElementById("user-input").value;
-            if (!userInput) return;
-
-            // Zobrazit spinner
-            document.getElementById("loading-spinner").style.display = "block";
-
-            try {
-                const response = await axios.post('https://onyx-backend-ujv4.onrender.com/ask', {
-                    query: userInput
-                });
-
-                const outputArea = document.getElementById("console-output");
-                outputArea.value += `\nYou: ${userInput}\nOnyx: ${response.data.response}\n`;
-                speak(response.data.response);
-                document.getElementById("user-input").value = '';
-            } catch (error) {
-                console.error('Error communicating with backend:', error);
-            } finally {
-                // Skrytí spinneru po dokončení požadavku
-                document.getElementById("loading-spinner").style.display = "none";
-            }
-        }
-
-        // Posluchač pro tlačítko Send
-        document.getElementById("send-button").addEventListener("click", sendQuery);
-
-        // Posluchač pro Enter klávesu v textovém poli
-        document.getElementById("user-input").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();  // Zabránit vložení nového řádku
-                sendQuery();
-            }
+      const tokenCode = document.getElementById("tokenAddress");
+      tokenCode.addEventListener("click", () => {
+        navigator.clipboard.writeText(tokenCode.innerText).then(() => {
+          alert("Token address copied to clipboard!");
         });
-
-        if ('webkitSpeechRecognition' in window) {
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = "en-US";
-
-            recognition.onresult = function(event) {
-                const transcript = event.results[0][0].transcript;
-                document.getElementById("user-input").value = transcript;
-            };
-
-            document.getElementById("voice-button").addEventListener("click", () => {
-                document.getElementById("recognized-text").textContent = "Listening...";
-                recognition.start();
-            });
-
-            recognition.onend = function() {
-                document.getElementById("recognized-text").textContent = "";
-            };
-        } else {
-            document.getElementById("voice-button").disabled = true;
-            document.getElementById("recognized-text").textContent = "Speech recognition not supported.";
-        }
-
-        function speak(text) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            speechSynthesis.speak(utterance);
-        }
+      });
     </script>
+  
+    <style>
+      .copyable {
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .copyable:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 6px rgba(255, 204, 0, 0.5);
+      }
+    </style>
+  </section>
+
+  <div class="youtube-subscribe">
+    <div class="g-ytsubscribe"
+         data-channelid="UCeXNUW5L0r7H2jK94RxCdug"
+         data-layout="full"
+         data-count="default"
+         data-theme="default">
+    </div>
+  </div>
+  <script src="https://apis.google.com/js/platform.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // safe menu toggle (pokud element existuje)
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+      const menu = document.querySelector('.menu');
+      menuToggle.addEventListener('click', () => {
+        if (menu) menu.classList.toggle('active');
+      });
+    }
+  
+    // safe token copy (pokud element existuje)
+    const tokenCode = document.getElementById('tokenAddress');
+    if (tokenCode) {
+      tokenCode.addEventListener('click', () => {
+        navigator.clipboard.writeText(tokenCode.innerText)
+          .then(() => { alert('Token address copied to clipboard!'); })
+          .catch(() => { /* ignore */ });
+      });
+    }
+  
+    // lead magnet form handler
+    const form = document.getElementById('magnetForm');
+    if (!form) return;
+  
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // zabrání default odeslání
+  
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+  
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method || 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' },
+          redirect: 'manual' // snažíme se zabránit automatickému follow (pro jistotu)
+        });
+  
+        // Formspree vrací 200 + JSON pokud Accept: application/json — kontrolujeme response.ok
+        if (response.ok) {
+          form.reset();
+  
+          // trigger download
+          const a = document.createElement('a');
+          a.href = 'demo.exe';        // uprav podle potřeby
+          a.download = 'demo.exe';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+  
+          // redirect na vlastní thank-you stránku (krátké zpoždění, aby začalo stažení)
+          setTimeout(() => {
+            window.location.href = 'thank-you-page.html';
+          }, 700);
+  
+        } else {
+          // pokus o rozumnou chybovou hlášku z JSONu
+          let msg = "There's been a mistake. Please try again.";
+          try {
+            const j = await response.json();
+            if (j && j.error) msg = j.error;
+          } catch (_) {}
+          alert(msg);
+        }
+      } catch (err) {
+        console.error('Submit error:', err);
+        alert('Network error — please try again later.');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  });
+  </script>
 </body>
 </html>
