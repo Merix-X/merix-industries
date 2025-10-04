@@ -51,6 +51,7 @@
         <p>Try a sample of our work – sign up and receive a free demo instantly.</p>
         <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST" class="lead-form">
           <input type="email" name="email" placeholder="Your email address" required>
+          <input type="hidden" name="_redirect" value="https://merix-industries.com/thank-you-page.html">
           <button id="buy-btn" type="submit" class="submit-btn">Submit</button>
         </form>
         <p class="small-note">No spam. Unsubscribe anytime.</p>
@@ -109,40 +110,80 @@
   </div>
   <script src="https://apis.google.com/js/platform.js"></script>
 
-  <script>
-    const form = document.querySelector("#magnetForm");
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-  
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // safe menu toggle (pokud element existuje)
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+      const menu = document.querySelector('.menu');
+      menuToggle.addEventListener('click', () => {
+        if (menu) menu.classList.toggle('active');
       });
+    }
   
-      if (response.ok) {
-        form.reset();
+    // safe token copy (pokud element existuje)
+    const tokenCode = document.getElementById('tokenAddress');
+    if (tokenCode) {
+      tokenCode.addEventListener('click', () => {
+        navigator.clipboard.writeText(tokenCode.innerText)
+          .then(() => { alert('Token address copied to clipboard!'); })
+          .catch(() => { /* ignore */ });
+      });
+    }
   
-        // nejdřív stáhnout soubor
-        const a = document.createElement("a");
-        a.href = "demo.exe";   // <- tady je tvůj soubor
-        a.download = "demo.exe";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+    // lead magnet form handler
+    const form = document.getElementById('magnetForm');
+    if (!form) return;
   
-        // pak redirect na thank you page
-        setTimeout(() => {
-          window.location.href = "thank-you-page.html";
-        }, 800);
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // zabrání default odeslání
   
-      } else {
-        alert("There's been a mistake. Please try again.");
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+  
+      try {
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method || 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' },
+          redirect: 'manual' // snažíme se zabránit automatickému follow (pro jistotu)
+        });
+  
+        // Formspree vrací 200 + JSON pokud Accept: application/json — kontrolujeme response.ok
+        if (response.ok) {
+          form.reset();
+  
+          // trigger download
+          const a = document.createElement('a');
+          a.href = 'demo.exe';        // uprav podle potřeby
+          a.download = 'demo.exe';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+  
+          // redirect na vlastní thank-you stránku (krátké zpoždění, aby začalo stažení)
+          setTimeout(() => {
+            window.location.href = 'thank-you-page.html';
+          }, 700);
+  
+        } else {
+          // pokus o rozumnou chybovou hlášku z JSONu
+          let msg = "There's been a mistake. Please try again.";
+          try {
+            const j = await response.json();
+            if (j && j.error) msg = j.error;
+          } catch (_) {}
+          alert(msg);
+        }
+      } catch (err) {
+        console.error('Submit error:', err);
+        alert('Network error — please try again later.');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
+  });
   </script>
 </body>
 </html>
