@@ -110,22 +110,6 @@
   <script src="https://apis.google.com/js/platform.js"></script>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-
-    // Kopírování adresy tokenu
-    const tokenCode = document.getElementById("tokenAddress");
-    tokenCode.addEventListener("click", () => {
-      navigator.clipboard.writeText(tokenCode.innerText).then(() => {
-        alert("Token address copied to clipboard!");
-      });
-    });
-
-    // Lead magnet - submit
     const form = document.querySelector("#magnetForm");
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
@@ -140,22 +124,20 @@
       });
   
       if (response.ok) {
-        alert("Thank you! Your demo is downloading...");
-  
         form.reset();
   
-        // automatické stažení souboru (změň 'demo.exe' na svůj soubor)
+        // nejdřív stáhnout soubor
+        const a = document.createElement("a");
+        a.href = "demo.exe";   // <- tady je tvůj soubor
+        a.download = "demo.exe";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+  
+        // pak redirect na thank you page
         setTimeout(() => {
-          const a = document.createElement("a");
-          a.href = "demo.exe";   // <- sem si dej název svého souboru
-          a.download = "demo.exe";
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-
-          // přesměrování zpět na homepage
-          window.location.href = "/";
-        }, 1000);
+          window.location.href = "thank-you-page.html";
+        }, 800);
   
       } else {
         alert("There's been a mistake. Please try again.");
