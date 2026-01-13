@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merix Industries - Portfolio</title>
+  <link rel="stylesheet" href="style_index.css">
+  <style>
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #444;
+      transition: 0.3s;
+    }
+    .project-card:hover { border-color: #ffcc00; transform: translateY(-5px); }
+    .project-img { width: 100%; height: 200px; background: #333; display: flex; align-items: center; justify-content: center; }
+    .project-info { padding: 20px; }
+    .tech-pill { background: #444; color: #ffcc00; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-right: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 16px;">
+          <a href="/"><img src="logo.jpg" style="height: 48px; border-radius: 50%;"></a>
+          <span style="color: #fff; font-weight: bold;">Merix Industries</span>
+      </div>
+      <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Case Studies & Projects</h1>
+    <p style="text-align: center;">Explore how I transform complex ideas into functional technology. (◕‿◕)</p>
+    
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <div class="project-img">🚀 [Image Placeholder]</div>
+        <div class="project-info">
+          <h3>J.A.R.V.I.S. Inspired AI</h3>
+          <p>Advanced AI assistant focusing on natural language processing and home automation.</p>
+          <div><span class="tech-pill">Python</span><span class="tech-pill">Neural Networks</span></div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-img">📟 [Image Placeholder]</div>
+        <div class="project-info">
+          <h3>Embedded PCB Controller</h3>
+          <p>Low-level hardware design for real-time monitoring of industrial sensors.</p>
+          <div><span class="tech-pill">KiCad</span><span class="tech-pill">C++</span><span class="tech-pill">Embedded</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
