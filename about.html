@@ -3,55 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merix Industries - Home, About</title>
+    <title>About - Merix Industries</title>
     <link rel="stylesheet" href="style_about.css?v=1.0">
 </head>
 <body>
-  <!-- Menu -->
     <header>
         <nav>
           <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 12px;">
-              <a href="https://merix-industries.com/">
-                <img src="logo.jpg" alt="Merix Industries, s.r.o" style="height: 48px;">
+              <a href="/">
+                <img src="logo.jpg" alt="Merix Industries logo" style="height: 48px; border-radius: 50%;">
               </a>
               <span style="color: #fff; font-weight: bold; font-size: 1.2rem;">Merix Industries</span>
           </div>
     
           <ul class="menu">
-            <li><a href="https://merix-industries.com/">Home</a></li>
-            <li><a href="https://merix-industries.com/about">About</a></li>
-            <li><a href="https://merix-industries.com/products">Products</a></li>
-            <li><a href="https://merix-industries.com/projects">Our projects</a></li>
-            <li><a href="https://merix-industries.com/onyx">Onyx</a></li>
-            <li><a href="https://merix-industries.com/contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/onyx">Onyx</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
           <div class="menu-toggle">&#9776;</div>
         </nav>
     </header>
 
-    <!-- Obsah stránky -->
-    <h1>Hey, I'm Merix</h1>
+    <main>
+        <h1>The Vision Behind Merix Industries</h1>
+        
         <div class="container">
-            <h2>About me</h2>
+            <h2>About Me</h2>
             <p>
-                I am Merix, (full name Matyas Kounovsky) a elementary school student and this is my website for my small business - Merix Industries (no trade license or a company). In my free time, I do programming in Python, Java, C++, low-level PCB design of embedded systems, and I implement some of my ideas.
+                I am <strong>Matyas Kounovsky</strong>, an independent developer and hardware designer. Merix Industries serves as my professional platform for delivering bespoke software and hardware solutions designed to meet the rigorous demands of modern technology.
+            </p>
+            <p>
+                With an extensive background in <strong>Python, Java, and C++</strong>, alongside specialized expertise in <strong>low-level PCB design for embedded systems</strong>, I focus on bridging the gap between complex concepts and functional reality. I believe that engineering is not merely about writing code, but about creating efficient tools that empower businesses to grow.
             </p>
         </div>
 
         <div class="container">
-            <h2>What I'm working on</h2>
+            <h2>Current Endeavors</h2>
             <p>
-                Lately, I've been working mostly on my own AI assistant inspired by J.A.R.V.I.S from Iron Man and a PCB design for on of my projects. If you have any questions about me and my projects, feel free to contact me via the contact in the top menu :D
+                My current focus is directed towards the development of a sophisticated AI assistant system and high-precision PCB designs for embedded applications. Every project I undertake is driven by the principles of technical excellence and operational reliability. 
+            </p>
+            <p>
+                If you are seeking a partner to transform your technical challenges into competitive advantages, I am available for consultation through the contact section. (◕‿◕)
             </p>
         </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const menu = document.querySelector(".menu");
-      menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+        menuToggle.addEventListener("click", () => {
+          menu.classList.toggle("active");
+        });
       });
-    });
-  </script>
+    </script>
 </body>
 </html>
