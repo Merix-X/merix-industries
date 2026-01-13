@@ -1,164 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Merix Industries | Custom Software & Hardware Solutions</title>
-  <link rel="stylesheet" href="style_index.css?v=1.2" />
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
-
+  <meta charset="UTF-8">
+  <title>Merix Industries | Professional Tech Solutions</title>
+  <link rel="stylesheet" href="style_index.css">
   <style>
-    /* Slot Machine & Hand-drawn Underline Effect */
-    .slot-machine-container {
+    .slot-machine {
       display: inline-block;
       height: 1.2em;
       vertical-align: bottom;
       overflow: hidden;
       position: relative;
-      color: #ffcc00;
-      padding-right: 10px;
     }
-
     .slot-list {
-      display: flex;
-      flex-direction: column;
-      transition: transform 3s cubic-bezier(0.1, 0, 0.1, 1);
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      margin: 0; padding: 0; list-style: none;
+      transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
     }
-
-    .slot-item {
-      height: 1.2em;
-      line-height: 1.2em;
-    }
-
     .underline-svg {
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 15px;
-      z-index: -1;
+      position: absolute; bottom: -2px; left: 0; width: 100%; height: 12px;
     }
-
-    .underline-path {
-      fill: none;
-      stroke: #ffcc00;
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-    }
-
-    .draw-underline {
-      animation: draw 0.8s ease-out forwards;
-    }
-
-    @keyframes draw {
-      to { stroke-dashoffset: 0; }
-    }
-
-    .hero-title-main {
-      text-align: center;
-      margin: 2rem 0;
-      font-size: 2.8rem;
-    }
-
-    /* Professional Polish */
-    .hero-section { background: #111 !important; border-bottom: 2px solid #333; }
-    .benefit-tag { font-size: 0.9rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+    .path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round;
+            stroke-dasharray: 400; stroke-dashoffset: 400; }
+    .draw { animation: drawPath 0.8s forwards 1.2s; }
+    @keyframes drawPath { to { stroke-dashoffset: 0; } }
   </style>
 </head>
 <body>
   <header>
-      <nav>
-          <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 16px;">
-              <a href="/">
-                <img src="logo.jpg" alt="Merix Industries logo" style="height: 48px;">
-              </a>
-              <span style="color: #fff; font-weight: bold; font-size: 1.2rem;">Merix Industries</span>
-          </div>
-          <ul class="menu">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/portfolio">Portfolio</a></li>
-              <li><a href="/onyx">Onyx</a></li>
-              <li><a href="/contact">Contact</a></li>
-          </ul>
-      </nav>
+    <nav>
+      <div class="logo"><strong>MERIX</strong> INDUSTRIES</div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="container">
-    <h1 class="hero-title-main">
-      Consider today the last time you deal with 
-      <div class="slot-machine-container" id="slotMachine">
+  <div class="container" style="text-align: center;">
+    <div class="experience-badge">
+      STÁŽ V SIEMENS • PROJEKT CANSAT CZECHIA
+    </div>
+    
+    <h1 style="font-size: 3.5rem; margin-bottom: 10px;">
+      Consider today the last time you deal with<br>
+      <span class="slot-machine">
         <ul class="slot-list" id="slotList">
-          <li class="slot-item">buggy code</li>
-          <li class="slot-item">clunky PCBs</li>
-          <li class="slot-item">manual data entry</li>
-          <li class="slot-item">technical debt</li>
-          <li class="slot-item">slow prototypes</li>
+          <li class="rolling-text">buggy code</li>
+          <li class="rolling-text">clunky PCBs</li>
+          <li class="rolling-text">manual tasks</li>
+          <li class="rolling-text">slow prototypes</li>
         </ul>
-        <svg class="underline-svg" viewBox="0 0 200 20">
-          <path id="underlinePath" class="underline-path" d="M5,15 Q100,25 195,12" />
-        </svg>
-      </div>!
+        <svg class="underline-svg"><path id="line" class="path" d="M5,8 Q50,12 95,5"/></svg>
+      </span>!
     </h1>
-    <p style="text-align: center; font-size: 1.2rem;">I build software and hardware that solves your problems, so you can focus on growing your business. ¯\_(ツ)_/¯</p>
+    
+    <p style="font-size: 1.3rem; color: var(--text-dim); max-width: 700px; margin: 20px auto;">
+      Experience with industrial-grade engineering at <span class="highlight">Siemens</span> applied to your startup or business. I bridge the gap between complex ideas and working hardware. ¯\_(ツ)_/¯
+    </p>
   </div>
 
-  <section class="hero-section">
-    <div class="hero-container">
-      <div class="what-we-do">
-        <span class="benefit-tag">The Wealth & Escape Factor</span>
-        <h2>✨ Engineering Solutions</h2>
-        <p>I specialize in rapid prototyping and high-performance systems. Whether it's a lightweight backend or a custom embedded device, I deliver results that save you time and money.</p>
-        <ul class="centered-checklist">
-          <li>Custom, production-ready PCB layouts & schematics</li>
-          <li>Performance-optimized software (Python, Java, C++)</li>
-          <li>Automation scripts that eliminate human error</li>
-        </ul>
-      </div>
-
-      <div class="lead-container">
-        <h2>🚀 Boost Your Production</h2>
-        <p>Grab my Free Demo Circuit Design and see how clean engineering can be. No strings attached! (Well, maybe just a follow-up email :D)</p>
-        <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST" class="lead-form">
-          <input type="email" name="email" placeholder="Enter your business email" required>
-          <button type="submit" class="submit-btn">Download Free Demo</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <script>
-    const slotList = document.getElementById('slotList');
-    const underline = document.getElementById('underlinePath');
-    const items = document.querySelectorAll('.slot-item');
-    let currentIndex = 0;
+    const list = document.getElementById('slotList');
+    const line = document.getElementById('line');
+    let idx = 0;
+    const items = 4;
 
-    function runSlotMachine() {
-      // 1. Remove underline
-      underline.classList.remove('draw-underline');
-      
-      // 2. Calculate next position
-      currentIndex = (currentIndex + 1) % items.length;
-      const offset = currentIndex * -1.2; // 1.2em is height
-      
-      // 3. Rotate
-      slotList.style.transform = `translateY(${offset}em)`;
-      
-      // 4. Draw underline after rotation slows down
-      setTimeout(() => {
-        underline.classList.add('draw-underline');
-      }, 2500);
+    function roll() {
+      line.classList.remove('draw');
+      idx = (idx + 1) % items;
+      list.style.transform = `translateY(-${idx * 1.2}em)`;
+      setTimeout(() => line.classList.add('draw'), 500);
     }
-
-    // Start loop
-    setInterval(runSlotMachine, 5000);
-    // Initial run
-    setTimeout(() => underline.classList.add('draw-underline'), 1000);
+    setInterval(roll, 4000);
+    window.onload = () => line.classList.add('draw');
   </script>
 </body>
 </html>
