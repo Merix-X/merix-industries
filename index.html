@@ -3,38 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Merix Industries | AI & Neural Network Development</title>
-
-  <meta name="description" content="Merix Industries develops intelligent AI software powered by neural networks and smart automation.">
-  <meta name="keywords" content="AI software, neural networks, automation, machine learning, Merix Industries, custom AI tools">
-  <meta property="og:title" content="Merix Industries | AI & Neural Network Development">
-  <meta property="og:description" content="We create advanced AI software using neural networks and smart automation.">
-  <meta property="og:image" content="https://merix-industries.com/logo.jpg">
-  <meta property="og:url" content="https://merix-industries.com/">
-  <meta name="robots" content="index, follow">
-  <meta name="google-adsense-account" content="ca-pub-7745594863804793">
-
+  <title>Merix Industries | Custom Software & Hardware Solutions</title>
   <link rel="stylesheet" href="style_index.css?v=1.2" />
   <link rel="icon" href="logo.jpg" type="image/jpeg">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHHLFLFSXH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QHHLFLFSXH');
-  </script>
+  <style>
+    /* Slot Machine & Hand-drawn Underline Effect */
+    .slot-machine-container {
+      display: inline-block;
+      height: 1.2em;
+      vertical-align: bottom;
+      overflow: hidden;
+      position: relative;
+      color: #ffcc00;
+      padding-right: 10px;
+    }
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7745594863804793"
-     crossorigin="anonymous"></script>
+    .slot-list {
+      display: flex;
+      flex-direction: column;
+      transition: transform 3s cubic-bezier(0.1, 0, 0.1, 1);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .slot-item {
+      height: 1.2em;
+      line-height: 1.2em;
+    }
+
+    .underline-svg {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 15px;
+      z-index: -1;
+    }
+
+    .underline-path {
+      fill: none;
+      stroke: #ffcc00;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+    }
+
+    .draw-underline {
+      animation: draw 0.8s ease-out forwards;
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .hero-title-main {
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 2.8rem;
+    }
+
+    /* Professional Polish */
+    .hero-section { background: #111 !important; border-bottom: 2px solid #333; }
+    .benefit-tag { font-size: 0.9rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
   <header>
       <nav>
           <div class="logo-text-wrapper" style="display: flex; align-items: center; gap: 16px;">
-              <a href="https://merix-industries.com/">
+              <a href="/">
                 <img src="logo.jpg" alt="Merix Industries logo" style="height: 48px;">
               </a>
               <span style="color: #fff; font-weight: bold; font-size: 1.2rem;">Merix Industries</span>
@@ -42,120 +82,83 @@
           <ul class="menu">
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/projects">Our projects</a></li>
+              <li><a href="/portfolio">Portfolio</a></li>
               <li><a href="/onyx">Onyx</a></li>
               <li><a href="/contact">Contact</a></li>
           </ul>
       </nav>
   </header>
 
-  <h1>Hello, I'm Merix! Welcome to Merix Industries!</h1>
+  <div class="container">
+    <h1 class="hero-title-main">
+      Consider today the last time you deal with 
+      <div class="slot-machine-container" id="slotMachine">
+        <ul class="slot-list" id="slotList">
+          <li class="slot-item">buggy code</li>
+          <li class="slot-item">clunky PCBs</li>
+          <li class="slot-item">manual data entry</li>
+          <li class="slot-item">technical debt</li>
+          <li class="slot-item">slow prototypes</li>
+        </ul>
+        <svg class="underline-svg" viewBox="0 0 200 20">
+          <path id="underlinePath" class="underline-path" d="M5,15 Q100,25 195,12" />
+        </svg>
+      </div>!
+    </h1>
+    <p style="text-align: center; font-size: 1.2rem;">I build software and hardware that solves your problems, so you can focus on growing your business. ¯\_(ツ)_/¯</p>
+  </div>
 
-  <!-- Hero -->
   <section class="hero-section">
     <div class="hero-container">
-
-      <!-- What I Do -->
       <div class="what-we-do">
-        <h1>✨ What I Do</h1>
-        <p>
-          At <strong>Merix Industries</strong>, I make custom 
-          <span style="color:#ffcc00; font-weight:600;">software and hardware</span> design on demand!
-        </p>
+        <span class="benefit-tag">The Wealth & Escape Factor</span>
+        <h2>✨ Engineering Solutions</h2>
+        <p>I specialize in rapid prototyping and high-performance systems. Whether it's a lightweight backend or a custom embedded device, I deliver results that save you time and money.</p>
         <ul class="centered-checklist">
-          <li></li>
-          <li>Making of custom low-level PCB layouts and schematic</li>
-          <li>Custom, lightweight software built on demand</li>
+          <li>Custom, production-ready PCB layouts & schematics</li>
+          <li>Performance-optimized software (Python, Java, C++)</li>
+          <li>Automation scripts that eliminate human error</li>
         </ul>
       </div>
 
-      <!-- Lead Magnet -->
       <div class="lead-container">
-        <h2>🚀 Get My Free Demo Circuit Design</h2>
-        <p>Exchange for your email, I will give you my best work for free! (so I can get some orders :D)</p>
+        <h2>🚀 Boost Your Production</h2>
+        <p>Grab my Free Demo Circuit Design and see how clean engineering can be. No strings attached! (Well, maybe just a follow-up email :D)</p>
         <form id="magnetForm" action="https://formspree.io/f/xjkrepdv" method="POST" class="lead-form">
-          <input type="email" name="email" placeholder="Your email address" required>
-          <input type="hidden" name="_redirect" value="https://merix-industries.com/thank-you-page.html">
-          <button type="submit" class="submit-btn">Get the Free Demo</button>
+          <input type="email" name="email" placeholder="Enter your business email" required>
+          <button type="submit" class="submit-btn">Download Free Demo</button>
         </form>
-        <p class="small-note">You will get notified by personalized email after getting the demo.</p>
       </div>
-
     </div>
   </section>
-
-  <!-- Crypto CTA -->
-  <section class="crypto-cta">
-    <div class="crypto-box">
-      <img src="logo.jpg" alt="Merix Coin" style="width:65px; margin-bottom:15px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.4);">
-      <h2>💰 You can support me with Crypto!</h2>
-      <p>You can now support me by buying my SOL token.</p>
-      <a href="https://raydium.io/swap/?inputMint=sol&outputMint=mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6" target="_blank" class="crypto-btn">
-        Buy My Crypto Now
-      </a>
-      <p style="color:#bbb; font-size:0.9rem; margin-top:15px;">
-        Token address:
-        <code id="tokenAddress" class="copyable">mntP8XprGTmW57N5BB58S1xg7MG2t54y1bBy3ZT4oM6</code>
-      </p>
-    </div>
-  </section>
-  <script src="https://apis.google.com/js/platform.js"></script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const tokenCode = document.getElementById('tokenAddress');
-    if (tokenCode) {
-      tokenCode.addEventListener('click', () => {
-        navigator.clipboard.writeText(tokenCode.innerText)
-          .then(() => alert('Token address copied to clipboard!'));
-      });
+    const slotList = document.getElementById('slotList');
+    const underline = document.getElementById('underlinePath');
+    const items = document.querySelectorAll('.slot-item');
+    let currentIndex = 0;
+
+    function runSlotMachine() {
+      // 1. Remove underline
+      underline.classList.remove('draw-underline');
+      
+      // 2. Calculate next position
+      currentIndex = (currentIndex + 1) % items.length;
+      const offset = currentIndex * -1.2; // 1.2em is height
+      
+      // 3. Rotate
+      slotList.style.transform = `translateY(${offset}em)`;
+      
+      // 4. Draw underline after rotation slows down
+      setTimeout(() => {
+        underline.classList.add('draw-underline');
+      }, 2500);
     }
 
-    const form = document.getElementById('magnetForm');
-    if (!form) return;
-
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' },
-        });
-        if (res.ok) {
-          alert('Thank you! Your download will start automatically.');
-          form.reset();
-          const a = document.createElement('a');
-          a.href = 'demo.exe';
-          a.download = 'demo.exe';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          setTimeout(() => window.location.href = 'thank-you-page.html', 1000);
-        } else {
-          alert('There was an error. Please try again.');
-        }
-      } catch {
-        alert('Network error. Please try again later.');
-      } finally {
-        btn.disabled = false;
-      }
-    });
-  });
+    // Start loop
+    setInterval(runSlotMachine, 5000);
+    // Initial run
+    setTimeout(() => underline.classList.add('draw-underline'), 1000);
   </script>
-
-  <style>
-    .copyable {
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .copyable:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 2px 6px rgba(255, 204, 0, 0.5);
-    }
-  </style>
 </body>
 </html>
